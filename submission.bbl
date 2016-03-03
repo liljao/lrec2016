@@ -1,0 +1,157 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{de Marneffe \bgroup et al.\egroup
+  }2006]{Mar:Mac:Man:06}
+Marie-Catherine de~Marneffe, Bill MacCartney, and Christopher~D. Manning.
+\newblock 2006.
+\newblock Generating typed dependency parses from phrase structure parses.
+\newblock In {\em Proceedings of the {I}nternational {C}onference on {L}anguage
+  {R}esources and {E}valuation ({LREC})}, pages 449--454.
+
+\bibitem[\protect\citename{de Marneffe \bgroup et al.\egroup
+  }2014]{Mar:Doz:Sil:14}
+Marie-Catherine de~Marneffe, Timothy Dozat, Natalia Silveira, Katri Haverinen,
+  Filip Ginter, Joakim Nivre, and Christopher~D. Manning.
+\newblock 2014.
+\newblock Universal {S}tanford dependencies. {A} cross-linguistic typology.
+\newblock In {\em Proceedings of the {I}nternational {C}onference on {L}anguage
+  {R}esources and {E}valuation ({LREC})}, pages 4585--4592.
+
+\bibitem[\protect\citename{Elming \bgroup et al.\egroup }2013]{Elm:Joh:Kle:13}
+Jacob Elming, Anders Johannsen, Sigrid Klerke, Emanuele Lapponi, Hector
+  Martinez, and Anders S{\o}gaard.
+\newblock 2013.
+\newblock Down-stream effects of tree-to-dependency conversions.
+\newblock In {\em Proceedings of the 2013 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 617--626, Atlanta, Georgia, USA.
+
+\bibitem[\protect\citename{Faarlund \bgroup et al.\egroup
+  }1997]{Faa:Lie:Van:97}
+Jan~Terje Faarlund, Svein Lie, and Kjell~Ivar Vannebo.
+\newblock 1997.
+\newblock {\em Norsk referansegrammatikk}.
+\newblock Universitetsforlaget, Oslo, Norway.
+
+\bibitem[\protect\citename{Hagen \bgroup et al.\egroup }2000]{Hag:Joh:Nok:00}
+Kristin Hagen, Janne~Bondi Johannessen, and Anders N{\o}klestad.
+\newblock 2000.
+\newblock A constraint-based tagger for norwegian.
+\newblock In {\em 17th Scandinavian Conference in Linguistics}, pages 31--48.
+
+\bibitem[\protect\citename{Ivanova \bgroup et al.\egroup }2012]{Iva:Oep:Ovr:12}
+Angelina Ivanova, Stephan Oepen, Lilja {\O}vrelid, and Dan Flickinger.
+\newblock 2012.
+\newblock Who {D}id {W}hat to {W}hom? {A} contrastive study of
+  syntacto-semantic dependencies.
+\newblock In {\em Proceedings of the {S}ixth {L}inguistic {A}nnotation
+  {W}orkshop}, pages 2--11, Jeju, Republic of Korea.
+
+\bibitem[\protect\citename{Kaplan and Bresnan}1982]{Kap:Bre:82}
+Ronald Kaplan and Joan Bresnan.
+\newblock 1982.
+\newblock {L}exical {F}unctional {G}rammar. {A} formal system for grammatical
+  representation.
+\newblock In Joan Bresnan, editor, {\em The Mental Representation of
+  Grammatical Relations}, pages 173--281. MIT Press, Cambridge, MA, USA.
+
+\bibitem[\protect\citename{McDonald \bgroup et al.\egroup
+  }2013]{McD:Niv:Qui:13}
+Ryan McDonald, Joakim Nivre, Yvonne Quirmbach-Brundage, Yoav Goldberg, Dipanjan
+  Das, Kuzman Ganchev, Keith Hall, Slav Petrov, Hao Zhang, and Oscar
+  T{\"a}ckstr{\"o}m.
+\newblock 2013.
+\newblock Universal dependency annotation for multilingual parsing.
+\newblock In {\em Proceedings of {A}ssociation for {C}omputational
+  {L}inguistics ({ACL})}, pages 92--97.
+
+\bibitem[\protect\citename{Nivre \bgroup et al.\egroup }2006]{Niv:Nil:Hal:2006}
+Joakim Nivre, Jens Nilsson, and Johan Hall.
+\newblock 2006.
+\newblock Talbanken05: A swedish treebank with phrase structure and dependency
+  annotation.
+\newblock In {\em Proceedings of the Fifth International Conference on Language
+  Resources and Evaluation ({LREC})}, Genoa, Italy.
+
+\bibitem[\protect\citename{Nivre}2014]{Nivre:14}
+Joakim Nivre.
+\newblock 2014.
+\newblock Universal {D}ependencies for {S}wedish.
+
+\bibitem[\protect\citename{Nivre}2015]{Nivre:15}
+Joakim Nivre.
+\newblock 2015.
+\newblock Towards a universal grammar of natural language processing.
+\newblock In {\em Proceedings of the {I}nternational {C}onference on
+  {I}ntelligent {T}ext {P}rocessing and {C}omputational {L}inguistics
+  ({CICLING})}.
+
+\bibitem[\protect\citename{Petrov \bgroup et al.\egroup }2012]{Pet:Das:McD:12}
+Slav Petrov, Dipanjan Das, and Ryan McDonald.
+\newblock 2012.
+\newblock A universal part-of-speech tagset.
+\newblock In {\em Proceedings of the {I}nternational {C}onference on {L}anguage
+  {R}esources and {E}valuation ({LREC})}, pages 2089--2096.
+
+\bibitem[\protect\citename{Popel \bgroup et al.\egroup }2013]{Pop:Mar:Ste:13}
+Martin Popel, David Mare\v{c}ek, Jan \v{S}t\v{e}p\'{a}nek, Daniel Zeman, and
+  Zden\v{e}k \v{Z}abokrtsk\'{y}.
+\newblock 2013.
+\newblock Coordination {S}tructures in {D}ependency {T}reebanks.
+\newblock In {\em Proceedings of {A}ssociation for {C}omputational
+  {L}inguistics ({ACL})}, pages 517--527.
+
+\bibitem[\protect\citename{Pyysalo \bgroup et al.\egroup
+  }2015]{Pyy:Kan:Miss:15}
+Sampo Pyysalo, Jenna Kanerva, Anna Missil{\"a}, Veronika Laippala, and Filip
+  Ginter.
+\newblock 2015.
+\newblock Universal dependencies for finnish.
+\newblock In {\em Proceedings of the Nordic Conference of Computational
+  Linguistics ({NODALIDA})}.
+
+\bibitem[\protect\citename{Rosa \bgroup et al.\egroup }2014]{Ros:Mas:Mar:14}
+Rudolf Rosa, Jan Ma{\v{s}}ek, David Mare{\v{c}}ek, Martin Popel, Daniel Zeman,
+  and Zden{\v{e}}k {\v{Z}}abokrtsk{\`y}.
+\newblock 2014.
+\newblock Hamledt 2.0: Thirty dependency treebanks stanfordized.
+\newblock In {\em Proceedings of the 9th International Conference on Language
+  Resources and Evaluation (LREC 2014)}, pages 2334--2341.
+
+\bibitem[\protect\citename{Schwartz \bgroup et al.\egroup
+  }2012]{Sch:Abe:Rap:12}
+Roy Schwartz, Omri Abend, and Ari Rappoport.
+\newblock 2012.
+\newblock Learnability-based syntactic annotation design.
+\newblock In {\em Proceedings of the {I}nternational {C}onference on
+  {C}omputational {L}inguistics {COLING}}, Mumbai, India.
+
+\bibitem[\protect\citename{Skj{\ae}rholt and {\O}vrelid}2012]{Skj:Ovr:12}
+Arne Skj{\ae}rholt and Lilja {\O}vrelid.
+\newblock 2012.
+\newblock Impact of treebank characteristics on cross-lingual parser
+  adaptation.
+\newblock In {\em Proceedings of Treebanks and Linguistic Theories (TLT11)}.
+
+\bibitem[\protect\citename{S{\o}gaard}2011]{Soe:11}
+Anders S{\o}gaard.
+\newblock 2011.
+\newblock Data point selection for cross-language adaptation of dependency
+  parsers.
+\newblock In {\em Proccedings of the meeting of the {A}ssociation for
+  {C}omputational {L}inguistics}.
+
+\bibitem[\protect\citename{Solberg \bgroup et al.\egroup }2014]{Sol:Skj:Ovr:14}
+Per~Erik Solberg, Arne Skj{\ae}rholt, Lilja {\O}vrelid, Kristin Hagen, and
+  Janne~Bondi Johannessen.
+\newblock 2014.
+\newblock The {N}orwegian {D}ependency {T}reebank.
+
+\bibitem[\protect\citename{Zeman}2008]{Zem:08}
+Daniel Zeman.
+\newblock 2008.
+\newblock Reusable tagset conversion using tagset drivers.
+\newblock In {\em Proceedings of the {I}nternational {C}onference on {L}anguage
+  {R}esources and {E}valuation ({LREC})}.
+
+\end{thebibliography}

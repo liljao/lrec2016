@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: submission.aux
+The style file: lrec2006.bst
+Database file #1: lrec2015.bib
+Warning--empty journal in Sol:Skj:Ovr:14
+You've used 20 entries,
+            2490 wiz_defined-function locations,
+            674 strings with 8881 characters,
+and the built_in function-call counts, 9588 in all, are:
+= -- 968
+> -- 430
+< -- 10
++ -- 152
+- -- 149
+* -- 668
+:= -- 1474
+add.period$ -- 79
+call.type$ -- 20
+change.case$ -- 153
+chr.to.int$ -- 20
+cite$ -- 21
+duplicate$ -- 436
+empty$ -- 739
+format.name$ -- 171
+if$ -- 2067
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 121
+num.names$ -- 62
+pop$ -- 221
+preamble$ -- 1
+purify$ -- 174
+quote$ -- 0
+skip$ -- 336
+stack$ -- 0
+substring$ -- 418
+swap$ -- 139
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 156
+warning$ -- 1
+while$ -- 71
+width$ -- 25
+write$ -- 275
+(There was 1 warning)

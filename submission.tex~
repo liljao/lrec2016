@@ -1,0 +1,731 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lrec2006}
+%\usepackage{apacite}
+\usepackage{covington}
+\usepackage{tikz-qtree}
+\usepackage{tikz-dependency}
+\usepackage{ctable}
+
+
+\usepackage{relsize}
+%\bibliographystyle{apacite}
+
+\let\w=\emph
+\let\tag=\textsf
+\let\app=\textsc
+\newcommand\deprel[1]{\\\textsc{#1}}
+
+\tikzset{edge from parent/.style={->,draw,font={\scshape\small}},
+    every tree node/.style={align=center,anchor=north},
+    level distance=10ex}
+
+\setlength\textfloatsep{3.5mm}
+
+\title{Norwegian Universal Dependencies}
+%\title{Universal Dependencies for Norwegian}
+
+\author{\bf Lilja {\O}vrelid\\[0.2ex]
+         \mbox{}Department of Informatics, University of Oslo\\[0.2ex]
+         \mbox{}{\tt liljao@ifi.uio.no}\\[0.2ex]
+        \vspace*{1.5ex}}
+        
+
+\date{}
+
+\frenchspacing
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+%323
+With the increasing popularity of dependency-based representations of
+syntactic structure in recent years, a wealth of different dependency
+annotation schemes have surfaced. It has been shown that the choice of
+dependency scheme influences parsing results \cite{Sch:Abe:Rap:12} as
+well as down-stream applications \cite{Elm:Joh:Kle:13} and even though
+attempts have been made to contrast different schemes theoretically
+\cite{Iva:Oep:Ovr:12}, it is clear that the diversity of
+representation makes comparisons difficult. Cross-linguistically even
+more so, and it can often be difficult to tease apart
+aspects of annotation scheme from typological differences in cross-lingual learning \cite{Soe:11,Skj:Ovr:12}.
+
+Universal Dependencies (UD) \cite{Mar:Doz:Sil:14,Nivre:15} is a recent
+community-driven effort to create cross-linguistically consistent
+syntactic annotation. UD is based on the Stanford dependency scheme
+\cite{Mar:Mac:Man:06} which has become a widely used dependency scheme
+for English in recent years.  A number of existing dependency
+treebanks have been converted to UD \cite{Pyy:Kan:Miss:15,Nivre:14}
+and new data has also been annotated from scratch in order to enable
+multilingual parser development, cross-lingual learning and
+typological studies of syntactic structure. Treebanks involved in this
+effort represent a diverse range of languages such as English, German,
+Swedish, Spanish, Italian, Persian, Japanese, and the UD release 1.1
+contains treebanks for as many as 34 different languages of varying
+sizes. 
+
+This paper describes a fully automatic conversion procedure for the
+Norwegian Dependency Treebank (NDT) to UD. Due to differences both in
+the tag set, as well as structural analyses, the conversion requires
+non-trivial transformations of the dependency trees, in addition to
+mappings of tags and labels that make reference to a combination of
+various kinds of linguistic information.  This paper details the
+mapping of PoS tags, morphological features and dependency relations
+and provides a description of the structural changes made to NDT
+analyses in order to make it compliant with the UD guidelines. The full
+converted treebank will be made available with the next release of the
+UD treebanks scheduled for November 2015.
+
+
+\section{NDT and UD}
+%138
+Universal Dependencies (UD) builds on several previous initiatives for universally common
+morphological \cite{Zem:08,Pet:Das:McD:12} and syntactic dependency \cite{McD:Niv:Qui:13,Ros:Mas:Mar:14}
+annotation. Among its main tenets are the primacy of content-words,
+i.e. content words, as opposed to function words, are syntactic heads
+wherever possible. It is intended to be a universal annotation scheme,
+i.e. applicable to any language, however also offers some
+possibilities for language-specific information.
+
+The Norwegian Dependency Treebank (NDT) \cite{Sol:Skj:Ovr:14} contains
+morphological and syntactic annotation for both varieties of written
+Norwegian (Bokm{\aa}l and Nynorsk). The morphological annotation
+follows the Oslo-Bergen Tagger scheme \cite{Hag:Joh:Nok:00}.  The
+syntactic annotation scheme is, to a large extent, based on the
+Norwegian Reference Grammar \cite{Faa:Lie:Van:97}.  and the dependency
+representations are inspired by choices made in comparable treebanks,
+in particular the Swedish treebank Talbanken
+\cite{Niv:Nil:Hal:2006}.
+
+%45
+%% \ctable[botcap,
+%%     caption={Annotation choices in the NDT},
+%%     label=tb:choices,
+%% ]{ll}{}{
+%%         \FL
+%% \multicolumn{1}{c@{\hspace{1em}}}{Head} & \multicolumn{1}{c@{\hspace{0.5em}}}{Dependent} \ML
+%% Finite verb & Complementizer \NN
+%% Finite auxiliary & Lexical verb \NN
+%% Infinitival marker & Lexical verb \NN
+%% Preposition & Prepositional complement \NN
+%% Noun & Determiner\NN
+%% First conjunct & Subsequent conjuncts 
+%%         \LL
+%%     }
+
+\section{Parts-of-speech}
+% 78 + 287 = 365
+The part-of-speech tag set used in the UD scheme is based on the
+Universal PoS tag set of \newcite{Pet:Das:McD:12} and contains 17 tags. The NDT tag set
+contains 19 tags.  The conversion of the part-of-speech information in
+NDT to the UD pos tag set is fairly straightforward and largely relies
+on a direct mapping presented in Table \ref{tb:pos}.  A few
+parts-of-speech require conversion rules which make reference to
+additional information in the treebank, represented by disjunction
+in the mapping. Below we will discuss a few of these cases.
+
+%122
+\ctable[botcap,
+    caption={Mapping between NDT and UD parts-of-speech},
+    label=tb:pos,
+]{ll}{}{
+        \FL
+NDT & UD\ML
+{\tt adj} & {\tt ADJ}\NN
+{\tt adv} & {\tt ADV}\NN
+{\tt clb} & {\tt PUNCT}, {\tt SYM}\NN
+{\tt det} & {\tt DET}, {\tt NUM}\NN
+{\tt konj} & {\tt CONJ}\NN
+{\tt interj} & {\tt INTJ}\NN
+{\tt inf-merke} & {\tt PART}\NN
+{\tt prep} & {\tt ADP}, {\tt ADV}\NN
+{\tt pron} & {\tt PRON}\NN
+{\tt <komma>} & {\tt PUNCT}\NN
+{\tt sbu} & {\tt SCONJ}\NN
+{\tt <strek>} & {\tt PUNCT}\NN
+{\tt subst} & {\tt NOUN}, {\tt PROPN}\NN
+{\tt <anf>} & {\tt PUNCT}\NN
+{\tt <parentes-slutt>} & {\tt PUNCT}\NN
+{\tt <parentes-beg>} & {\tt PUNCT}\NN
+{\tt symb} & {\tt SYM}\NN
+{\tt ukjent} & {\tt X}\NN
+{\tt verb} & {\tt AUX}, {\tt VERB}
+        \LL
+    }
+
+The universal scheme makes a distinction between proper and common
+nouns at the part-of-speech level. This information can be found among
+the morphological features in NDT ({\tt prop}), hence the mapping is
+straightforward.
+
+For verbs UD distinguishes auxiliaries ({\tt AUX}) from main
+verbs ({\tt VERB}).  This distinction is not explicitly made in
+NDT, hence our conversion procedure must make use of the syntactic
+structure of the verbs in order to implement this distinction. Verbs
+that have a direct, non-finite dependent (a dependent with the NDT
+dependency relation {\sc inf}) are marked as auxiliaries and all other
+verbs as regular verbs.
+
+\section{Morphological information}
+%109
+In addition to part-of-speech information, NDT contains a rich
+inventory of morphological features, e.g. information about properties
+like gender, definiteness, tense, voice, etc. The UD guidelines
+specify a universal set of morphological features and the conversion
+between the two does not require reference to
+information in addition to the feature information. The feature
+mapping is described in Table \ref{tb:feats}.  Note that since the
+number of UD features is larger than the NDT features, some of the NDT
+features correspond to a set of UD features, e.g. the NDT features for
+verbs ({\tt pres, pret}) which instantiate both the {\tt Mood, Tense}
+and {\tt VerbForm} features.
+
+%109
+\ctable[botcap,
+    caption={Mapping between NDT and UD morphological features},
+    label=tb:feats,
+]{lp{4cm}}{}{
+        \FL
+NDT & UD\ML
+{\tt mask,fem,n{\o}yt} & {\tt Gender=Masc,Fem,Neut}\NN
+{\tt ent,fl} & {\tt Number=Sing,Plur}\NN
+{\tt be,ub} & {\tt Definite=Def,Ind}\NN
+{\tt pres,pret} & {\tt Mood=Ind, Tense=Pres,Past, VerbForm=Fin}\NN
+{\tt perf-part} & {\tt VerbForm=Part}\NN
+{\tt imp} & {\tt Mood=Imp, VerbForm=Fin}\NN
+{\tt pass} & {\tt Voice=Pass}\NN
+{\tt inf} & {\tt VerbForm=Inf}\NN
+{\tt 1,2,3} & {\tt Person=1,2,3}\NN
+{\tt nom,akk,gen} & {\tt Case=Nom,Acc,Gen}\NN
+{\tt pos,komp,sup} & {\tt Degree=Pos,Cmp,Sup}\NN
+{\tt hum} & {\tt Animacy=Anim}\NN
+{\tt pers} & {\tt PronType=Prs}\NN
+{\tt dem} & {\tt PronType=Dem}\NN
+{\tt sp} & {\tt PronType=Int}\NN
+{\tt res} & {\tt PronType=Rcp}\NN
+{\tt poss} & {\tt Poss=Yes}\NN
+{\tt refl} & {\tt Refl=Yes}
+        \LL
+    }
+
+\section{Structural conversion}
+%63
+The NDT annotation scheme differs structurally from the UD scheme in
+a number of important ways.  The conversion is therefore non-trivial
+and requires a set of structural rules which operate on the dependency
+graphs in addition to a mapping procedure over the dependency labels.
+The conversion is implemented as a cascade of structural rules followed by a
+relation conversion procedure over the modified graph structures.
+The structural rules employ a small set of graph operations that reverse, reattach, delete and add arcs.
+
+\subsection{Verbal groups}
+%106
+NDT consistently marks the finite verb as head of a clause, with other
+non-finite verbs as dependents ({\tt INFV}), see example
+(\ref{ex:verb}a). In a parallel manner, infinitival markers are also
+annotated as heads with the infinitival verb as its dependent, see
+(\ref{ex:infmark}a). UD on the other hand annotates the lexical, main
+verb as head of the verbal group and various finite and non-finite
+auxiliaries receive an auxiliary relation ({\tt aux, auxpass}) , see
+(\ref{ex:verb}b) and (\ref{ex:infmark}b) below.  The conversion rule
+locates the main verb within the chain of nonfinite dependents of the
+finite verb and makes this node the head of the other verbs in the
+chain.
+
+%134
+\begin{examples}
+\item\label{ex:verb}
+\begin{minipage}[t]{3cm}
+a)
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+            skal \& ha \& sett \\
+            \w{shall} \& \w{have} \& \w{seen}\\
+        \end{deptext}
+    \depedge{1}{2}{\large\sc infv}
+    \depedge{2}{3}{\large\sc infv}
+    \deproot[edge unit distance=1.5ex]{1}{\large\sc }
+    \end{dependency}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{3cm}
+b)
+%\item\label{ex:ndt-verb}
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.5cm]
+            skal \& ha \& sett \\
+            \w{shall} \& \w{have} \& \w{seen}\\
+        \end{deptext}
+    \depedge{3}{1}{\large aux}
+    \depedge{3}{2}{\large aux}
+    \deproot[edge unit distance=1.5ex]{3}{\large }
+    \end{dependency}
+\end{minipage}
+\item\label{ex:infmark}
+\begin{minipage}[t]{3cm}
+a)
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+            {\aa} \& ha \& sett \\
+            \w{to} \& \w{have} \& \w{seen}\\
+        \end{deptext}
+    \depedge{1}{2}{\large\sc infv}
+    \depedge{2}{3}{\large\sc infv}
+    \deproot[edge unit distance=1.5ex]{1}{}
+    \end{dependency}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{3cm}
+b)
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.5cm]
+            {\aa} \& ha \& sett \\
+            \w{to} \& \w{have} \& \w{seen}\\
+        \end{deptext}
+    \depedge{3}{1}{\large mark}
+    \depedge{3}{2}{\large aux}
+    \deproot[edge unit distance=1.5ex]{3}{}
+    \end{dependency}
+\end{minipage}
+\end{examples}
+
+
+\subsection{Copula constructions}
+%42
+The treatment of copula constructions within the UD scheme differs
+markedly from that of the NDT by appointing the predicative element as
+head of the entire construction and attaching the copula verb with a
+special relation {\tt cop}, see (\ref{ex:cop}b). Our conversion thus
+reverses the arc between the copula and its complement and reattaches
+all its dependents to the predicative element.
+%68
+\begin{examples}
+\item\label{ex:cop}
+\begin{minipage}[t]{3cm}
+a)
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+            de \& er \& fattige \\
+            \w{they} \& \w{are} \& \w{poor}\\
+        \end{deptext}
+    \depedge{2}{1}{\large\sc subj}
+    \depedge{2}{3}{\large\sc spred}
+    \deproot[edge unit distance=1.5ex]{2}{\large\sc finv}
+    \end{dependency}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{3cm}
+b)
+%\item\label{ex:ndt-verb}
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.4cm]
+            de \& er \& fattige\\
+            \w{they} \& \w{are} \& \w{poor}\\
+        \end{deptext}
+    \depedge{3}{1}{\large nsubj}
+    \depedge{3}{2}{\large cop}
+    \deproot[edge unit distance=1.5ex]{3}{\large root}
+    \end{dependency}
+\end{minipage}
+\end{examples}
+
+
+\subsection{Prepositions and their complements}
+%47
+In NDT, prepositions are heads of their prepositional complements
+which receive the {\tt PUTFYLL} label, see (\ref{ex:prep}a). Seeing
+that languages differ greatly in their use of pre/postpositions, the
+UD scheme annotates the prepositional complement as head and attaches
+the preposition using the {\tt case} relation, see (\ref{ex:prep}b). In conversion this is once again a matter of reversing the arc and reattaching dependents to the new head.
+%56
+\begin{examples}
+\item\label{ex:prep}
+\begin{minipage}[t]{2.5cm}
+a)
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+            p{\aa} \& menyen \\
+            \w{on} \& \w{menu-the} \\
+        \end{deptext}
+    \depedge{1}{2}{\large\sc putfyll}
+    \deproot[edge unit distance=1.5ex]{1}{}
+    \end{dependency}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{2.5cm}
+b)
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+            p{\aa} \& menyen \\
+            \w{on} \& \w{menu-the} \\
+        \end{deptext}
+    \depedge{2}{1}{\large case}
+    \deproot[edge unit distance=1.5ex]{2}{}
+    \end{dependency}
+\end{minipage}
+\end{examples}
+
+
+\subsection{Predicatives}
+%119
+NDT distinguishes several types of predicatives, both predicatives
+that are arguments of verbs (subject predicative {\tt SPRED} and
+object predicative {\tt OPRED}) and ``free predicatives'' which are
+not arguments of the verb, but nonetheless characterize either a
+subject or an object in the preceding context (free subject
+predicative {\tt FSPRED} and free object predicative {\tt
+  FOPRED}). Both of these are attached to the finite verb in NDT, as we can see in (\ref{ex:pred}a). In a
+similar manner, UD distinguishes between obligatory and optional
+predicatives, where the former are analyzed using the {\tt xcomp}
+relation and attached to the main predicate, whereas the optional
+predicatives are attached as adverbial clauses ({\tt acl}) modifying the argument
+they characterize, see (\ref{ex:pred}b). Our conversion thus attaches the {\tt FSPRED} argument to its sibling subject argument, {\tt FOPRED} to an object sibling.
+%65
+\begin{examples}
+\item\label{ex:pred}
+\begin{itemize}
+\item[(a)]
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+          taler \& Solstad \& uredd \\
+          \w{speaks} \& \w{Solstad} \& \w{unscared} \\
+        \end{deptext}
+            \depedge{1}{2}{\large\sc subj}
+            \depedge{1}{3}{\large\sc fspred}
+            \deproot[edge unit distance=1.5ex]{1}{}
+    \end{dependency}
+\item[(b)]
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+          taler \& Solstad \& uredd \\
+          \w{speaks} \& \w{Solstad} \& \w{unscared} \\
+        \end{deptext}
+            \depedge{1}{2}{\large nsubj}
+            \depedge{2}{3}{\large acl}
+            \deproot[edge unit distance=1.5ex]{1}{}
+    \end{dependency}
+\end{itemize}
+\end{examples}
+
+
+\subsection{Coordination}
+%65
+Coordination is a phenomenon which exhibits considerable variation in terms
+of dependency representation across various annotation schemes \cite{Pop:Mar:Ste:13}.
+As we can see from the example in (\ref{ex:coord}), the analyses
+chosen in the NDT and UD schemes are fairly similar in their choice of
+the first conjunct as head of the coordinate structure. They differ
+mainly in the attachment of the conjunction and the relation names.
+%88
+\begin{example}
+\label{ex:coord}
+\begin{itemize}
+\item[(a)]
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+          kamskjell \& , \& piggvar \& og \& lammefilet \\
+          \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lambfilet}\\
+        \end{deptext}
+            \depedge{1}{2}{\large\sc ik}
+            \depedge{1}{3}{\large\sc koord}
+            \depedge{1}{5}{\large\sc koord}
+            \depedge{5}{4}{\large\sc konj}
+            \deproot[edge unit distance=1.5ex]{1}{}
+    \end{dependency}
+\item[(b)]
+    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.2cm]
+          kamskjell \& , \& piggvar \& og \& lammefilet \\
+          \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lambfilet}\\
+        \end{deptext}
+            \depedge{1}{2}{\large punct}
+            \depedge{1}{3}{\large conj}
+            \depedge{1}{4}{\large cc}
+            \depedge{1}{5}{\large conj}
+            \deproot[edge unit distance=1.5ex]{1}{}
+    \end{dependency}
+\end{itemize}
+%\item\label{ex:ndt-verb}
+\end{example}
+
+\section{Conversion of dependency relations}
+%105
+A minority of the dependency relations in NDT may be converted
+directly, based on the mapping described in Table \ref{tb:dep}, the
+rest require the formulation of mapping constraints which make
+reference to information in addition to the dependency relation
+itself, i.e. part-of-speech tag, morphological features, dependency
+structure or even a combination of these. An overview of
+the non-direct mapping of dependency relations that require additional
+information from the linguistic context is provided in Table \ref{tb:multidep}.
+These mappings often also require heuristics which approximate some
+syntactic property which is not explicitly annotated in NDT. Below we
+will present these heuristics and their usage in the conversion.
+
+%102
+\ctable[botcap,
+    caption={Direct mapping between NDT and UD dependency relations.},
+    label=tb:dep,
+]{ll}{}{
+        \FL
+NDT & UD\ML
+{\tt APP} & {\tt appos}\NN
+{\tt FSUBJ} & {\tt expl}\NN
+{\tt FOBJ} & {\tt expl}\NN
+{\tt FSPRED} & {\tt acl}\NN
+{\tt FOPRED} & {\tt acl}\NN
+{\tt FRAG} & {\tt root}\NN
+{\tt IOBJ} & {\tt iobj}\NN
+{\tt OPRED} & {\tt xcomp}\NN
+{\tt INTERJ} & {\tt discourse}\NN
+{\tt KONJ} & {\tt cc}\NN
+{\tt KOORD} & {\tt conj}\NN
+{\tt KOORD-ELL} & {\tt remnant}\NN
+{\tt IP} & {\tt punct}\NN
+{\tt IK} & {\tt punct}\NN
+{\tt PAR} & {\tt parataxis}\NN
+{\tt SPRED} & {\tt xcomp}\NN
+{\tt UKJENT} & {\tt goeswith}
+        \LL
+    }
+
+
+%118
+\paragraph{Active/Passive}There are two ways of expressing passive voice in Norwegian: a
+morphological passive expressed by an addition of a {\it -s} to the
+verb, e.g. {\it danses} 'to be danced' or a periphrastic passive which
+is composed of the auxiliary {\it bli} 'to become' and a participle
+form, e.g. {\it danset} 'danced'. Only the morphological passive is
+marked explicitly as being in the passive voice.  We therefore define
+a heuristic which counts a lexical main verb as passive, if it is (i)
+a morphological passive, or (ii) is a participle headed by a form of
+the auxiliary {\it bli}.  This heuristic is used in the conversion of
+passive auxiliaries {\tt auxpass} and passive subjects {\tt nsubjpass,
+  csubjpass}.
+
+%128
+\paragraph{Nominal/Clausal}Several of the UD relations assume a distinction between nominal and
+clausal elements. This distinction is complicated somewhat by the fact
+that in copula constructions, as described above, the complement of
+the copula is head of the construction as a whole. This means that
+adjectives or even nouns may be counted as clausal in contexts where
+they have a copula dependent, as in (\ref{ex:cop}b).  In the
+conversion we introduce a notion of a \emph{predicate}, which may be
+either verbal ({\tt AUX, VERB}) or the complement in a copula
+construction. This notion is used to distinguish nominal and clausal
+subjects ({\tt nsubj, nsubjpass} vs. {\tt csubj, csubjpass}), objects
+({\tt dobj} vs. {\tt ccomp, xcomp}), various modifiers ({\tt nmod}
+vs. {\tt acl}) and adverbials ({\tt nmod} vs. {\tt advcl}).
+%TO-DO: adverb subjects?? footnote
+
+%59
+\paragraph{Control}UD is inspired by the syntactic framework of Lexical Functional
+Grammar \cite{Kap:Bre:82} and adopts its distinction between complement
+clauses with obligatory subject control ({\tt xcomp}) and those without
+({\tt ccomp}). The notion of control is not native to NDT, hence we
+approximate it by requiring the presence of an explicit subject dependent of the
+head verb of the clause.
+
+
+%45
+\paragraph{Negation}UD distinguishes negation modifiers which modify either a noun ({\it
+  no problem}) or a predicate (in the aforementioned sense) ({\it is
+  not a problem, doesn't argue}). Our conversion explicitly marks the
+negative determiner ({\it ingen} 'no') and the negative adverb ({\it
+  ikke} 'not') in Norwegian.
+
+%141
+\paragraph{Particles}NDT distinguishes between transitive and intransitive prepositions, or
+so-called particles, in the annotation. In order to account for the
+relation between the verb and its particle we introduce the
+language-specific relation {\tt compound:prt}, for prepositions which
+are attached to a verb and furthermore does not have an explicit prepositional complement,
+e.g. {\it si opp} 'discontinue' (lit. 'say up').  
+
+\paragraph{Relative clauses}
+In many languages, relative markers are pronouns. In Norwegian, there
+are good reasons for choosing to treat the relative marker {\it som}
+'that' as a subjunction \cite{Faa:Lie:Van:97}. This relative marker,
+unlike those found in many other languages does not inflect (as in
+English {\it who-whom}, or German {\it der-die-das}) and exclusively
+occurs initially in a subordinate clause. In our conversion we
+introduce a language-specific variant of the clausal relation {\tt
+  acl}, {\tt acl:relcl} which signals that this is a relative clause.
+%% The relative marker {\it som} 'that' receives an argument role based
+%% on a heuristic which checks for the presence or absence of other
+%% argument siblings.
+%69
+%% \begin{example}
+%% \label{ex:relclause}
+%% \begin{minipage}[t]{3cm}
+%% a)
+%%     \begin{dependency}[arc edge, text only label, theme=simple]
+%%         \begin{deptext}[column sep=.3cm]
+%%           dem \& som \& lider \\
+%%           \w{those} \& \w{who} \& \w{suffer} \\
+%%         \end{deptext}
+%%             \depedge{1}{3}{\large\sc atr}
+%%             \depedge{3}{2}{\large\sc sbu}
+%%             \deproot[edge unit distance=1.5ex]{1}{}
+%%     \end{dependency}
+%% \end{minipage}
+%% \hspace{0.5cm}
+%% \begin{minipage}[t]{3cm}
+%% b)
+%%     \begin{dependency}[arc edge, text only label, theme=simple]
+%%         \begin{deptext}[column sep=.3cm]
+%%           dem \& som \& lider \\
+%%           \w{those} \& \w{who} \& \w{suffer} \\
+%%         \end{deptext}
+%%             \depedge{1}{3}{\large acl:relcl}
+%%             \depedge{3}{2}{\large nsubj}
+%%             \deproot[edge unit distance=1.5ex]{1}{}
+%%     \end{dependency}
+%% \end{minipage}
+%% \end{example}
+
+%% \subsection{Numerical modifiers}
+%% UD distinguishes numerical modifiers of nouns, e.g. {\it 42,
+%%   fifty}. These are annotated as regular determiners in NDT, but are
+%% part of a larger group of quantifiers which receive the additional
+%% feature {\tt kvant}, e.g. {\it noen} 'some', {\it ingen} 'no'. In
+%% order to distinguish the numerical modifiers from the other
+%% quantifying determiners, we use a regular expression which recognizes
+%% digits and numerical expressions like {\it trettito} 'thirty-two'.
+%99
+\ctable[botcap,
+    caption={Non-direct mapping between NDT and UD dependency relations; requires additional constraints with reference to PoS, morphological features or dependency context.},
+    label=tb:multidep, 
+]{lp{4cm}l}{}{
+        \FL
+NDT & UD \ML
+{\tt ADV} & {\tt advcl, advmod, compound:prt, neg, nmod} \NN
+{\tt ATR} & {\tt acl:relcl, amod, nmod} \NN
+{\tt DET} & {\tt nmod, nummod, det} \NN
+{\tt FINV} & {\tt aux, auxpass, root} \NN
+{\tt FLAT} & {\tt foreign, name} \NN
+{\tt OBJ, POBJ} & {\tt dobj, ccomp, xcomp} \NN
+{\tt SBU} & {\tt nsubj, nsubjpass, dobj, iobj, mark} \NN
+{\tt SUBJ, PSUBJ} & {\tt nsubj, nsubjpass, csubj, csubjpass} 
+        \LL
+    }
+
+
+%TO-DO som is sconj, mark relation follows
+%TO-DO change code to treat relcl
+%TO-DO change description in paper, can still have acl:relcl
+
+
+%% preposition stranding with particle analysis, correct correlate dobj:
+%% som henholdsvis Sveits og Norge har lagt ut
+
+%% preposition stranding, incorrect correlate dobj:
+%% en tid som vi er relativt godt fornøyd med
+%% et søppellag som vi ikke skal tape mot (wrong particle analysis)
+%% de store sakene som han arbeider med
+
+%% a different problem with analysis, "double correlate''.., not correct dobj analysis
+%% hva som foregikk i Norge på det aktuelle tidspunktet
+%% hva som blir hans nye klubb
+%% hvilke tiltak som kan bidra
+
+%% to prinsipper som begge er viktige ?? what is correlate 
+
+%% no way of distinguishing relative clauses without relativizer (possible if correlate is something other than subject)..
+
+%% if decide to skip relclause analysis, should not treat som as pronoun!! Check NRG for argumentation, evidence that is not pronoun. What about Swedish??
+
+%% NRG:
+%% - not a pronoun in Norwegian, not conjugated (ubøyelig) and only occurs as initial element in subordinate clause
+
+%% - if so, should be 'mark'
+
+%TO-DO: UD relations not used: mwe, etc. check
+
+%% %Include this? Not quite sure about this argument. Is this a particle or not? tests..
+%% Another side effect of our treatment of particles is that not all intransitive prepositions are actually particles.
+%% One such case is caused by so-called \emph{preposition stranding}, where the complement of the preposition occurs elsewhere in the sentence, as in the relative clause in (\ref{ex:prep-strand}).
+%% \begin{examples}
+%% \item\label{ex:prep-strand}
+%% \gll en applikasjon de kan være stolte av
+%% an application they can be proud of
+%% \glt `an application they can be proud of'
+%% \glend
+%% \end{examples}
+
+%\clearpage
+\smaller
+\bibliographystyle{lrec2006}
+\bibliography{lrec2015}
+
+\end{document}
+
+
+% From structural conversion
+%% \subsection{Root}
+%% %52
+%% In NDT, there is no designated root label. Rather, the root of the
+%% dependency graph may have different labels, e.g. {\tt FINV} (finite
+%% verb) or {\tt FRAG} (fragment), depending on the structure of the
+%% sentence. In the conversion, every node with the dummy node (0) as
+%% head receives the {\tt root} relation.
+
+%From PoS conversion
+
+%% The relative pronoun {\it som} 'who/that' is analyzed as a subjunction
+%% in NDT, whereas the universal scheme, and thus our conversion, uses
+%% the pronominal tag {\tt PRON} for these words.
+
+%% NDT explicitly marks headings using the {\tt |} symbol, tagged as a
+%% clause boundary ({\tt clb}) along with information in the
+%% morphological features {\tt <overskrift>}. These are converted to the
+%% UD symbol tag {\tt SYM}.
+
+%% Numerical expressions, e.g. {\it to} 'two' or {\it 45} are tagged as
+%% determiners in NDT, also when they do not explicitly modify a nominal,
+%% e.g. {\it de to gjorde en imponerende innsats} 'the two did an
+%% impressive job'. These are however marked as 'kvant'
+%% (quantificational) in the morphological features, hence the conversion
+%% mapping makes reference to this property in order to distinguish {\tt NUM} from {\tt DET}.
+
+%% NDT implements a somehwat broader definition of prepositions than the UD
+%% scheme and includes several cases which are counted as adverbs in the
+%% universal schemes. In particular, this is the case for demonstrative
+%% adverbs such as {\it her} 'here' and {\it der} 'there'. These are
+%% followingly converted to adverbs ({\tt ADV}) in the PoS conversion, whereas all
+%% other prepositions are converted to {\tt ADP}.
+
+%possibly change?
+
+
+%from dependency relation conversion
+%% On manual inspection of the
+%% converted data we find that this conversion also gives us the
+%% preposition in fixed expressions which require the combination of a
+%% verb, direct object and a preposition, such as {\it snu ryggen til}
+%% 'turn (ones) back to' as well as certain fixed combinations of
+%% prepositions which function as a whole syntactically, e.g. {\it til og
+%%   med} 'even (lit. to and with)'. Without any existing annotation
+%% distinguishing these from the regular particle constructions these are
+%% difficult to differentiate automatically.  
+
+
+%% \subsection{Relative clauses}
+%% The analyses of relative clauses differ notably between the two
+%% annotation schemes. Both schemes treat the relative clause as a
+%% clausal modifier of a nominal element ({\tt ATR} vs {\tt acl}),
+%% however the treatment of the relative marker/pronoun differs. NDT
+%% treats relative markers as subordinating conjunctions which depend on
+%% the finite verb of the relative clause,\footnote{They argue for this
+%%   by pointing to the fact that relative markers unlike many other
+%%   languages do not conjugate (who-whom, der-die-das) and only occur
+%%   initially in a subordinate clause \cite{Faa:Lie:Van:97}} UD treats
+%% the relative marker as a pronoun which occupies an argument relation
+%% in the relative clause. In our conversion we introduce a
+%% language-specific variant of the clausal relation {\tt acl}, {\tt
+%%   acl:relcl} which signals that this is a relative clause. The
+%% relative marker {\it som} 'that' receives an argument role based on a
+%% heuristic which checks for the presence or absence of other argument
+%% siblings.

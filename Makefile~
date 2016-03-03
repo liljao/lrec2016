@@ -1,0 +1,17 @@
+FILE ?=inf5830_dgsyntax_handout
+
+
+#articles
+  all:
+	latex '\nonstopmode\input $(FILE)'
+#	pdflatex '\nonstopmode\input $(FILE)'
+	bibtex $(FILE)
+	latex '\batchmode\input {$(FILE)}'
+	latex '\batchmode\input {$(FILE)}'
+	dvips -f $(FILE).dvi -o $(FILE).ps
+	ps2pdf $(FILE).ps
+#	dvipdf $(FILE).dvi
+
+clean:
+	rm -f *.aux *.log *.dvi *.blg *.bbl *~
+

@@ -1,0 +1,165 @@
+@incollection{Kap:Bre:82,
+  author = {Kaplan, Ronald and Bresnan, Joan},
+  title = {{L}exical {F}unctional {G}rammar.
+           {A} Formal System for Grammatical Representation},
+  booktitle = {The Mental Representation of Grammatical Relations},
+  year = 1982,
+  pages = {173--281},
+  editor = {Bresnan, Joan},
+  publisher = {MIT Press},
+  address = {Cambridge, MA, USA},
+ }
+
+@InProceedings{Pet:Das:McD:12,
+  author = {Slav Petrov and Dipanjan Das and Ryan McDonald},
+  title = {A Universal Part-of-Speech Tagset},
+  booktitle = {Proceedings of the {I}nternational {C}onference on
+                  {L}anguage {R}esources and {E}valuation ({LREC})},
+  pages = {2089--2096},
+  year = 2012,
+}
+
+@InProceedings{Elm:Joh:Kle:13,
+author = {Jacob Elming and Anders Johannsen and Sigrid Klerke and Emanuele Lapponi and Hector Martinez and Anders S{\o}gaard},
+title = {Down-stream effects of tree-to-dependency conversions},
+booktitle = {Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+year = {2013},
+address = {Atlanta, Georgia, USA},
+pages ={617--626},
+}
+
+@Book{Faa:Lie:Van:97,
+  author = 	 {Faarlund, Jan Terje and Lie, Svein and Vannebo, Kjell Ivar},
+  title = 	 {Norsk referansegrammatikk},
+  publisher = 	 {Universitetsforlaget},
+  address = 	 {Oslo, Norway},
+  year = 	 {1997}}
+
+@InProceedings{Hag:Joh:Nok:00,
+  author = 	 {Kristin Hagen and Janne Bondi Johannessen and Anders N{\o}klestad},
+  title = 	 {A Constraint-based Tagger for Norwegian},
+  booktitle =	 {17th Scandinavian Conference in Linguistics},
+  pages =	 {31--48},
+  year =	 2000
+}
+
+@inproceedings{Iva:Oep:Ovr:12,
+  author    = {Angelina Ivanova and  Stephan Oepen and Lilja {\O}vrelid and Dan Flickinger},
+  title     = {Who {D}id {W}hat to {W}hom? 
+               {A} Contrastive Study of Syntacto-Semantic Dependencies},
+  booktitle = {Proceedings of the {S}ixth {L}inguistic {A}nnotation {W}orkshop},
+  year      = 2012,
+  address   = {Jeju, Republic of Korea},
+  pages     = {2--11}
+}
+
+@inproceedings{Mar:Doz:Sil:14,
+  author = {Marie-Catherine de Marneffe and Timothy Dozat and Natalia Silveira and Katri Haverinen and Filip Ginter and Joakim Nivre and Christopher D. Manning},
+  title = {Universal {S}tanford Dependencies.
+           {A} Cross-Linguistic Typology},
+  booktitle = {Proceedings of the {I}nternational {C}onference on
+                  {L}anguage {R}esources and {E}valuation ({LREC})},
+  year = 2014,
+  pages = {4585--4592}
+}
+
+@InProceedings{Mar:Mac:Man:06,
+  author = {Marie-Catherine de~Marneffe and Bill MacCartney and Christopher D. Manning},
+  title = {Generating Typed Dependency Parses from Phrase Structure
+                  Parses},
+  booktitle = {Proceedings of the {I}nternational {C}onference on
+                  {L}anguage {R}esources and {E}valuation ({LREC})},
+  year = 2006,
+  pages = {449--454}
+}
+
+@inproceedings{McD:Niv:Qui:13,
+  title={Universal Dependency Annotation for Multilingual Parsing.},
+  author={Ryan McDonald and Joakim Nivre and Yvonne Quirmbach-Brundage and Yoav Goldberg and Dipanjan Das and Kuzman Ganchev and Keith Hall and Slav Petrov and Hao Zhang and Oscar T{\"a}ckstr{\"o}m},
+  booktitle={Proceedings of {A}ssociation for {C}omputational {L}inguistics ({ACL})},
+  pages={92--97},
+  year={2013}
+}
+
+
+@inproceedings{Nivre:15,
+  author = {Nivre, Joakim},
+  title = {Towards a Universal Grammar of Natural Language Processing},
+  year = 2015,
+  booktitle = {Proceedings of the {I}nternational {C}onference on {I}ntelligent {T}ext {P}rocessing and {C}omputational {L}inguistics ({CICLING})},
+}
+
+@misc{Nivre:14,
+  title={Universal {D}ependencies for {S}wedish},
+  author={Nivre, Joakim},
+  year={2014},
+  publisher={Swedish Language Technology Conference ({SLTC})}
+}
+
+@InProceedings{Niv:Nil:Hal:2006,
+  author = 	 {Nivre, Joakim and Nilsson, Jens and Hall, Johan},
+  title = 	 {Talbanken05: A Swedish Treebank with Phrase Structure and Dependency Annotation},
+  booktitle ={Proceedings of the Fifth International Conference on Language Resources and Evaluation ({LREC})},
+  year = 	 2006,
+  address = 	 {Genoa, Italy}}
+
+@InProceedings{Pop:Mar:Ste:13,
+  author    = {Popel, Martin  and  Mare\v{c}ek, David  and  \v{S}t\v{e}p\'{a}nek, Jan  and  Zeman, Daniel  and  \v{Z}abokrtsk\'{y}, Zden\v{e}k},
+  title     = {Coordination {S}tructures in {D}ependency {T}reebanks},
+  booktitle = {Proceedings of {A}ssociation for {C}omputational {L}inguistics ({ACL})},
+  year      = {2013},
+  pages     = {517--527},
+}
+
+@inproceedings{Pyy:Kan:Miss:15,
+  title={Universal Dependencies for Finnish},
+  author={Sampo Pyysalo and Jenna Kanerva and Anna Missil{\"a} and Veronika Laippala and Filip Ginter},
+  booktitle={Proceedings of the Nordic Conference of Computational Linguistics ({NODALIDA})},
+  year={2015}
+}
+
+@inproceedings{Ros:Mas:Mar:14,
+  title={HamleDT 2.0: Thirty dependency treebanks stanfordized},
+  author={Rudolf Rosa and Jan Ma{\v{s}}ek and David Mare{\v{c}}ek and Martin Popel and Daniel Zeman and Zden{\v{e}}k {\v{Z}}abokrtsk{\`y}},
+  booktitle={Proceedings of the 9th International Conference on Language Resources and Evaluation (LREC 2014)},
+  pages={2334--2341},
+  year={2014}
+}
+
+@inproceedings{Sch:Abe:Rap:12,
+  author = {Roy Schwartz  and  Omri Abend  and  Ari Rappoport},
+  title = {Learnability-based Syntactic Annotation Design},
+  booktitle = {Proceedings of the {I}nternational {C}onference on {C}omputational {L}inguistics {COLING}},
+  year = 2012,
+  address   = {Mumbai, India}
+}
+
+@InProceedings{Soe:11,
+  author = 	 {Anders S{\o}gaard},
+  title = 	 {Data point selection for cross-language adaptation of dependency parsers},
+  booktitle = {Proccedings of the meeting of the {A}ssociation for {C}omputational {L}inguistics},
+  year = 2011
+}
+
+@article{Sol:Skj:Ovr:14,
+  title={The {N}orwegian {D}ependency {T}reebank},
+  author={Per Erik Solberg and Arne Skj{\ae}rholt and Lilja {\O}vrelid and Kristin Hagen and Janne Bondi Johannessen},
+  booktitle={Proceedings of the {I}nternational {C}onference on
+                  {L}anguage {R}esources and {E}valuation ({LREC})},
+  year={2014}
+}
+
+@InProceedings{Skj:Ovr:12,
+  author = 	 {Arne Skj{\ae}rholt and Lilja {\O}vrelid},
+  title = 	 {Impact of treebank characteristics on cross-lingual parser adaptation},
+  booktitle = {Proceedings of Treebanks and Linguistic Theories (TLT11)},
+  year = 	 2012}
+
+@inproceedings{Zem:08,
+  title={Reusable Tagset Conversion Using Tagset Drivers.},
+  author={Zeman, Daniel},
+  booktitle={Proceedings of the {I}nternational {C}onference on
+                  {L}anguage {R}esources and {E}valuation ({LREC})},
+  year={2008}
+}
+
