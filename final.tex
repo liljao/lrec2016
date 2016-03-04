@@ -9,7 +9,7 @@
 \usepackage{tikz-qtree}
 \usepackage{tikz-dependency}
 \usepackage{ctable}
-
+\usepackage{url}
 
 \usepackage{relsize}
 %\bibliographystyle{apacite}
@@ -46,8 +46,8 @@ analyses in order to make it compliant with the UD guidelines. We
 further present the PoS-tagging and dependency parsing experiments which
 contrast the performance of several state-of-the-art taggers and
 parsers on the original and converted treebank. The full converted
-treebank was made available with the 1.2 release of the UD treebanks.\\ 
-\newline 
+treebank was made available with the 1.2 release of the UD treebanks.\\
+\newline
 \Keywords{Dependency treebanks, Universal Dependencies, dependency parsing} }
 
 \begin{document}
@@ -83,7 +83,7 @@ typological studies of syntactic structure. Treebanks involved in this
 effort represent a diverse range of languages such as English, German,
 Swedish, Spanish, Italian, Persian, Japanese, and the UD release 1.1
 contains treebanks for as many as 34 different languages of varying
-sizes. 
+sizes.
 
 This paper describes a fully automatic conversion procedure for the
 Norwegian Dependency Treebank (NDT) to UD. Due to differences both in
@@ -114,7 +114,7 @@ annotation follows the Oslo-Bergen Tagger scheme
 extent, based on the Norwegian Reference Grammar
 \cite{Faa:Lie:Van:97} and the dependency representations are
 inspired by choices made in comparable treebanks, in particular the
-Swedish treebank Talbanken \cite{Niv:Nil:Hal:2006}. 
+Swedish treebank Talbanken \cite{Niv:Nil:Hal:2006}.
 \newcite{Skj:14} quantified inter-annotator agreement using a chance-corrected metric derived from
 Krippendorff's $\alpha$ and showed that agreement on the NDT data is high: scoring an $\alpha$ of about
 98\%, among the highest of all the data sets studied.
@@ -132,7 +132,7 @@ Finite auxiliary & Lexical verb \NN
 Infinitival marker & Lexical verb \NN
 Preposition & Prepositional complement \NN
 Noun & Determiner\NN
-First conjunct & Subsequent conjuncts 
+First conjunct & Subsequent conjuncts
         \LL
     }
 
@@ -606,7 +606,7 @@ so-called particles, in the annotation. In order to account for the
 relation between the verb and its particle we introduce the
 language-specific relation {\tt compound:prt}, for prepositions which
 are attached to a verb and furthermore does not have an explicit prepositional complement,
-e.g. {\it si opp} 'discontinue' (lit. 'say up'). 
+e.g. {\it si opp} 'discontinue' (lit. 'say up').
 On manual inspection of the
 converted data we find that this conversion also gives us the
 preposition in fixed expressions which require the combination of a
@@ -637,7 +637,7 @@ siblings.
 
 \ctable[botcap,
     caption={Non-direct mapping between NDT and UD dependency relations; requires additional constraints with reference to PoS, morphological features or dependency context.},
-    label=tb:multidep, 
+    label=tb:multidep,
 ]{lp{4cm}l}{}{
         \FL
 NDT & UD \ML
@@ -648,7 +648,7 @@ NDT & UD \ML
 {\tt FLAT} & {\tt foreign, name} \NN
 {\tt OBJ, POBJ} & {\tt dobj, ccomp, xcomp} \NN
 {\tt SBU} & {\tt nsubj, nsubjpass, dobj, iobj, mark} \NN
-{\tt SUBJ, PSUBJ} & {\tt nsubj, nsubjpass, csubj, csubjpass} 
+{\tt SUBJ, PSUBJ} & {\tt nsubj, nsubjpass, csubj, csubjpass}
         \LL
     }
 
@@ -692,13 +692,39 @@ treebank.
 As noted in previous work \cite{Mar:Doz:Sil:14}, several of the design
 choices of the UD scheme, such as the attachment of auxiliaries and
 prepositions, are known to cause a drop in parsing accuracy
-\cite{Sch:Abe:Rap:12}. 
+\cite{Sch:Abe:Rap:12}.
 
 Danish parsing experiments: \cite{Joh:Alo:Pla:15} orig 84.38 -> ud 81.56
 Bulgarian \cite{Ose:Sim:15}: orig 89.14 -> ud 83.5
 
+The tagging was performed by SVMTool\footnote{\url{cs.upc.edu/~nlp/SVMTool}}
+employing strategy 1, which proved to be optimal for parsing NDT in previous
+work ((Hohle, 2016; forthcoming)). The original tag set of NDT comprises 19
+tags, 12 of which are morphosyntactic tags, while its fine-grained counterpart
+(concatenation of tag and set of morphological features) totals 368 tags. The
+corresponding fine-grained tag set of UD comprises 169 tags. We see that
+tagging accuracy is higher on NDT with the original tag set, while UD surpasses
+NDT when using the fine-grained tag set. This is as expected, as the
+fine-grained tag set of NDT contains almost 200 more tags than that of UD,
+which markedly complicates the tagging.
 
-
+\ctable[botcap,
+    caption={Overview of the results from tagging NDT and UD with the various
+        data sets and tag sets},
+    label=tb:taggingeval,
+]{llll}{}{
+        \FL
+        & & \multicolumn{2}{c}{Accuracy}
+        \NN
+        \cmidrule(lr){3-4}
+        Data set & Tag set & NDT & UD
+        \ML
+        Dev & Coarse/original & \textbf{97.90\%} & 96.96\% \\
+        Dev & Fine/full & 93.74\% & \textbf{94.59\%} \\
+        Test & Coarse/original & \textbf{97.82\%} & 96.82\% \\
+        Test & Fine/full & 93.19\% & \textbf{94.15\%}
+        \LL
+    }
 %% \paragraph{Relative clauses}
 %% In many languages, relative markers are pronouns. In Norwegian, there
 %% are good reasons for choosing to treat the relative marker {\it som}
@@ -771,7 +797,7 @@ Bulgarian \cite{Ose:Sim:15}: orig 89.14 -> ud 83.5
 %% hva som blir hans nye klubb
 %% hvilke tiltak som kan bidra
 
-%% to prinsipper som begge er viktige ?? what is correlate 
+%% to prinsipper som begge er viktige ?? what is correlate
 
 %% no way of distinguishing relative clauses without relativizer (possible if correlate is something other than subject)..
 
