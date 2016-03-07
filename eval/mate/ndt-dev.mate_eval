@@ -1,0 +1,617 @@
+  Labeled   attachment score: 28943 / 32107 * 100 = 90.15 %
+  Unlabeled attachment score: 29703 / 32107 * 100 = 92.51 %
+  Label accuracy score:       29729 / 32107 * 100 = 92.59 %
+
+  ================================================================================
+
+  Evaluation of the results in ndt-dev-predicted.conll
+  vs. gold standard /home/pettehoh/ndt/ndt-dev.conll:
+
+  Legend: '.S' - the beginning of a sentence, '.E' - the end of a sentence
+
+  Number of non-scoring tokens: 4360
+
+  The overall accuracy and its distribution over CPOSTAGs
+
+  -----------+-------+-------+------+-------+------+-------+-------
+  Accuracy   | words | right |   %  | right |   %  | both  |   %
+             |       | head  |      |  dep  |      | right |
+  -----------+-------+-------+------+-------+------+-------+-------
+  total      | 32107 | 29703 |  93% | 29729 |  93% | 28943 |  90%
+  -----------+-------+-------+------+-------+------+-------+-------
+  subst      |  8944 |  8204 |  92% |  8110 |  91% |  7971 |  89%
+  verb       |  5932 |  5605 |  94% |  5659 |  95% |  5504 |  93%
+  prep       |  4878 |  4100 |  84% |  4208 |  86% |  3987 |  82%
+  adj        |  3144 |  2945 |  94% |  2920 |  93% |  2866 |  91%
+  det        |  2408 |  2340 |  97% |  2347 |  97% |  2315 |  96%
+  pron       |  2369 |  2310 |  98% |  2168 |  92% |  2147 |  91%
+  adv        |  1337 |  1210 |  91% |  1275 |  95% |  1188 |  89%
+  konj       |  1306 |  1256 |  96% |  1306 | 100% |  1256 |  96%
+  sbu        |  1074 |  1064 |  99% |  1071 | 100% |  1063 |  99%
+  inf-merke  |   531 |   506 |  95% |   488 |  92% |   486 |  92%
+  clb        |    98 |    97 |  99% |    98 | 100% |    97 |  99%
+  ukjent     |    51 |    37 |  73% |    47 |  92% |    37 |  73%
+  interj     |    35 |    29 |  83% |    32 |  91% |    26 |  74%
+  -----------+-------+-------+------+-------+------+-------+-------
+
+
+  The overall error rate and its distribution over CPOSTAGs
+
+  -----------+-------+-------+------+-------+------+-------+-------
+  Error      | words | head  |   %  |  dep  |   %  | both  |   %
+  Rate       |       | err   |      |  err  |      | wrong |
+  -----------+-------+-------+------+-------+------+-------+-------
+  total      | 32107 |  2404 |   7% |  2378 |   7% |  1618 |   5%
+  -----------+-------+-------+------+-------+------+-------+-------
+  subst      |  8944 |   740 |   8% |   834 |   9% |   601 |   7%
+  verb       |  5932 |   327 |   6% |   273 |   5% |   172 |   3%
+  prep       |  4878 |   778 |  16% |   670 |  14% |   557 |  11%
+  adj        |  3144 |   199 |   6% |   224 |   7% |   145 |   5%
+  det        |  2408 |    68 |   3% |    61 |   3% |    36 |   1%
+  pron       |  2369 |    59 |   2% |   201 |   8% |    38 |   2%
+  adv        |  1337 |   127 |   9% |    62 |   5% |    40 |   3%
+  konj       |  1306 |    50 |   4% |     0 |   0% |     0 |   0%
+  sbu        |  1074 |    10 |   1% |     3 |   0% |     2 |   0%
+  inf-merke  |   531 |    25 |   5% |    43 |   8% |    23 |   4%
+  clb        |    98 |     1 |   1% |     0 |   0% |     0 |   0%
+  ukjent     |    51 |    14 |  27% |     4 |   8% |     4 |   8%
+  interj     |    35 |     6 |  17% |     3 |   9% |     0 |   0%
+  -----------+-------+-------+------+-------+------+-------+-------
+
+
+  Precision and recall of DEPREL
+
+  ----------------+------+---------+--------+------------+---------------
+  deprel          | gold | correct | system | recall (%) | precision (%) 
+  ----------------+------+---------+--------+------------+---------------
+  ADV             | 5101 |    4604 |   5075 |      90.26 |         90.72
+  APP             |  285 |     166 |    268 |      58.25 |         61.94
+  ATR             | 4010 |    3597 |   4013 |      89.70 |         89.63
+  DET             | 2435 |    2339 |   2480 |      96.06 |         94.31
+  DOBJ            | 1982 |    1830 |   2012 |      92.33 |         90.95
+  FINV            | 2097 |    2076 |   2130 |      99.00 |         97.46
+  FLAT            |  691 |     587 |    710 |      84.95 |         82.68
+  FOBJ            |   10 |       7 |      9 |      70.00 |         77.78
+  FOPRED          |    7 |       0 |      2 |       0.00 |          0.00
+  FRAG            |  301 |     259 |    268 |      86.05 |         96.64
+  FSPRED          |   49 |      21 |     35 |      42.86 |         60.00
+  FSUBJ           |  360 |     318 |    404 |      88.33 |         78.71
+  IK              |    5 |       0 |      0 |       0.00 |           NaN
+  INFV            | 1761 |    1744 |   1765 |      99.03 |         98.81
+  INTERJ          |   34 |      32 |     33 |      94.12 |         96.97
+  IOBJ            |   74 |      46 |     57 |      62.16 |         80.70
+  IP              |   98 |      98 |     98 |     100.00 |        100.00
+  KONJ            | 1297 |    1296 |   1296 |      99.92 |        100.00
+  KOORD           | 1344 |    1261 |   1376 |      93.82 |         91.64
+  KOORD-ELL       |   33 |       7 |     22 |      21.21 |         31.82
+  OPRED           |   87 |      46 |     75 |      52.87 |         61.33
+  PAR             |  188 |     143 |    156 |      76.06 |         91.67
+  POBJ            |    7 |       5 |      7 |      71.43 |         71.43
+  PSUBJ           |  205 |     142 |    173 |      69.27 |         82.08
+  PUTFYLL         | 4433 |    4285 |   4460 |      96.66 |         96.08
+  SBU             | 1071 |    1071 |   1074 |     100.00 |         99.72
+  SPRED           | 1025 |     901 |   1030 |      87.90 |         87.48
+  SUBJ            | 3102 |    2848 |   3078 |      91.81 |         92.53
+  UKJENT          |   15 |       0 |      1 |       0.00 |          0.00
+
+
+  Precision and recall of DEPREL + ATTACHMENT
+
+  ----------------+------+---------+--------+------------+---------------
+  deprel          | gold | correct | system | recall (%) | precision (%) 
+  ----------------+------+---------+--------+------------+---------------
+  ADV             | 5101 |    4303 |   5075 |      84.36 |         84.79
+  APP             |  285 |     151 |    268 |      52.98 |         56.34
+  ATR             | 4010 |    3460 |   4013 |      86.28 |         86.22
+  DET             | 2435 |    2312 |   2480 |      94.95 |         93.23
+  DOBJ            | 1982 |    1821 |   2012 |      91.88 |         90.51
+  FINV            | 2097 |    2076 |   2130 |      99.00 |         97.46
+  FLAT            |  691 |     558 |    710 |      80.75 |         78.59
+  FOBJ            |   10 |       7 |      9 |      70.00 |         77.78
+  FOPRED          |    7 |       0 |      2 |       0.00 |          0.00
+  FRAG            |  301 |     259 |    268 |      86.05 |         96.64
+  FSPRED          |   49 |      21 |     35 |      42.86 |         60.00
+  FSUBJ           |  360 |     317 |    404 |      88.06 |         78.47
+  IK              |    5 |       0 |      0 |       0.00 |           NaN
+  INFV            | 1761 |    1741 |   1765 |      98.86 |         98.64
+  INTERJ          |   34 |      26 |     33 |      76.47 |         78.79
+  IOBJ            |   74 |      46 |     57 |      62.16 |         80.70
+  IP              |   98 |      97 |     98 |      98.98 |         98.98
+  KONJ            | 1297 |    1246 |   1296 |      96.07 |         96.14
+  KOORD           | 1344 |    1104 |   1376 |      82.14 |         80.23
+  KOORD-ELL       |   33 |       6 |     22 |      18.18 |         27.27
+  OPRED           |   87 |      46 |     75 |      52.87 |         61.33
+  PAR             |  188 |     133 |    156 |      70.74 |         85.26
+  POBJ            |    7 |       5 |      7 |      71.43 |         71.43
+  PSUBJ           |  205 |     142 |    173 |      69.27 |         82.08
+  PUTFYLL         | 4433 |    4276 |   4460 |      96.46 |         95.87
+  SBU             | 1071 |    1063 |   1074 |      99.25 |         98.98
+  SPRED           | 1025 |     899 |   1030 |      87.71 |         87.28
+  SUBJ            | 3102 |    2828 |   3078 |      91.17 |         91.88
+  UKJENT          |   15 |       0 |      1 |       0.00 |          0.00
+
+
+  Precision and recall of binned HEAD direction
+
+  ----------------+------+---------+--------+------------+---------------
+  direction       | gold | correct | system | recall (%) | precision (%) 
+  ----------------+------+---------+--------+------------+---------------
+  to_root         | 2409 |    2366 |   2409 |      98.22 |         98.22
+  left            | 18481 |   18168 |  18495 |      98.31 |         98.23
+  right           | 11217 |   10892 |  11203 |      97.10 |         97.22
+  self            |    0 |       0 |      0 |        NaN |           NaN
+
+
+  Precision and recall of binned HEAD distance
+
+  ----------------+------+---------+--------+------------+---------------
+  distance        | gold | correct | system | recall (%) | precision (%) 
+  ----------------+------+---------+--------+------------+---------------
+  to_root         | 2409 |    2366 |   2409 |      98.22 |         98.22
+  1               | 17301 |   16748 |  17441 |      96.80 |         96.03
+  2               | 5899 |    5490 |   5922 |      93.07 |         92.71
+  3-6             | 5072 |    4490 |   5008 |      88.53 |         89.66
+  7-...           | 1426 |    1134 |   1327 |      79.52 |         85.46
+
+
+  Frame confusions (gold versus system; *...* marks the head token)
+
+  102  *PUTFYLL* / *PUTFYLL* ATR 
+   62  *PUTFYLL* ATR / *PUTFYLL* 
+   59  *DOBJ* ATR / *DOBJ* 
+   36  ** FRAG / ** FINV 
+   36  *FLAT* / DET *FLAT* 
+   35  *ADV* / *ADV* PUTFYLL 
+   35  *DOBJ* / *DOBJ* ATR 
+   34  *INFV* DOBJ / *INFV* DOBJ ADV 
+   31  DET *PUTFYLL* / DET *PUTFYLL* ATR 
+   29  ADV *ADV* / *ADV* 
+   26  *DET* / *DET* FLAT 
+   25  DET *DOBJ* ATR / DET *DOBJ* 
+   25  DET *SUBJ* / *SUBJ* 
+   25  *INFV* DOBJ ADV / *INFV* DOBJ 
+   24  *SPRED* ADV / *SPRED* 
+   21  *PUTFYLL* FLAT / *PUTFYLL* 
+   20  APP *SUBJ* / *SUBJ* 
+   19  *ADV* / *ADV* ADV 
+   18  *APP* / *APP* FLAT 
+   18  *ADV* ADV / *ADV* 
+   17  *SUBJ* / *SUBJ* ATR 
+   15  *PUTFYLL* / *PUTFYLL* KOORD 
+   15  *ADV* PUTFYLL / ADV *ADV* PUTFYLL 
+   15  ADV *ATR* / *ATR* 
+   14  ADV *ADV* PUTFYLL / *ADV* PUTFYLL 
+   14  *INFV* ADV / *INFV* ADV ADV 
+   14  *ADV* PUTFYLL / *ADV* 
+   13  SUBJ *FINV* DOBJ / SUBJ *FINV* DOBJ ADV 
+   13  DET *DOBJ* / DET *DOBJ* ATR 
+   13  *ADV* / ADV *ADV* 
+   12  *INFV* ADV ADV / *INFV* ADV 
+   12  *INFV* SPRED / *INFV* SPRED ADV 
+   12  KONJ *KOORD* / KONJ *KOORD* ATR 
+   12  *SPRED* / *SPRED* ADV 
+   12  *INFV* DOBJ ADV ADV / *INFV* DOBJ ADV 
+   11  DET ATR *DOBJ* ATR / DET ATR *DOBJ* 
+   11  DET *PUTFYLL* ATR / DET *PUTFYLL* 
+   10  SUBJ *FINV* SPRED / FSUBJ *FINV* SPRED 
+   10  ADV *DET* / *DET* 
+   10  ATR *DOBJ* ATR / ATR *DOBJ* 
+   10  ATR *PUTFYLL* / ATR *PUTFYLL* ATR 
+   10  *FLAT* / APP *FLAT* FLAT 
+   10  ATR *PUTFYLL* ATR / ATR *PUTFYLL* 
+   10  *PUTFYLL* ATR ATR / *PUTFYLL* ATR 
+    9  ADV *INFV* DOBJ ADV / ADV *INFV* DOBJ 
+    9  DET *PUTFYLL* / *PUTFYLL* 
+    9  ATR *DOBJ* / ATR *DOBJ* ATR 
+    9  *SUBJ* APP / *SUBJ* 
+    9  ADV *INFV* DOBJ / ADV *INFV* DOBJ ADV 
+    8  *INFV* DOBJ ADV / *INFV* DOBJ ADV ADV 
+    8  *INFV* / *INFV* ADV 
+    8  DET ATR *DOBJ* / DET ATR *DOBJ* ATR 
+    8  *SUBJ* FLAT / *SUBJ* 
+    8  PUTFYLL *ATR* / *ATR* 
+    8  ATR *ATR* ATR / DET *ATR* ATR 
+    8  DET ATR *PUTFYLL* / DET ATR *PUTFYLL* ATR 
+    8  PUTFYLL *ADV* / *ADV* 
+    8  DET ATR *SPRED* / DET ATR *SPRED* ATR 
+    8  *DET* ADV / *DET* 
+    7  KONJ *KOORD* / *KOORD* 
+    7  SUBJ *FINV* SPRED ADV / SUBJ *FINV* SPRED 
+    7  DET *SPRED* / DET *SPRED* ATR 
+    7  *ATR* / DET *ATR* 
+    7  SUBJ *FINV* DOBJ ADV / SUBJ *FINV* DOBJ 
+    7  DET ATR *PUTFYLL* ATR / DET ATR *PUTFYLL* 
+    7  ADV *INFV* / *INFV* 
+    7  DET *PUTFYLL* ATR ATR / DET *PUTFYLL* ATR 
+    7  KONJ *KOORD* ATR / KONJ *KOORD* 
+    7  *PUTFYLL* / *PUTFYLL* APP 
+    6  *DET* / ADV *DET* 
+    6  ATR *ATR* / DET ATR *ATR* 
+    6  *ADV* PUTFYLL OPRED / *ADV* PUTFYLL 
+    6  *PUTFYLL* APP / *PUTFYLL* 
+    6  *INFV* ADV ADV ADV / *INFV* ADV ADV 
+    6  *PUTFYLL* FLAT / *PUTFYLL* FLAT ATR 
+    6  SUBJ *FINV* INFV / SUBJ *FINV* INFV KOORD 
+    6  *DET* FLAT / *DET* FLAT FLAT 
+    6  *INFV* SPRED ADV / *INFV* SPRED 
+    6  ADV *SPRED* / *SPRED* 
+    6  *SUBJ* ATR ATR / *SUBJ* ATR 
+    6  *FLAT* / *FLAT* PUTFYLL 
+    6  DET *SUBJ* / DET *SUBJ* ATR 
+    6  DET *PUTFYLL* ATR / *PUTFYLL* 
+    6  *DOBJ* APP / *DOBJ* 
+    5  DET *ADV* / DET *ADV* ATR 
+    5  *ADV* PUTFYLL / *ADV* PUTFYLL ADV 
+    5  *INFV* DOBJ / *INFV* DOBJ KOORD 
+    5  *FLAT* / *FLAT* FLAT 
+    5  ADV *ADV* / ADV *ADV* ADV 
+    5  *DET* FLAT / *DET* 
+    5  ADV *FINV* SUBJ / ADV *FINV* DOBJ 
+    5  ADV *FINV* SUBJ DOBJ ADV / ADV *FINV* SUBJ DOBJ 
+    5  DET *SUBJ* ATR / DET *SUBJ* 
+    5  ADV *ADV* ADV / ADV *ADV* 
+    5  DET *APP* / *APP* 
+    5  *SPRED* / *SPRED* ATR 
+    5  SUBJ *FINV* SPRED KOORD / FSUBJ *FINV* SPRED KOORD 
+    5  DET *DET* / *DET* 
+    5  *PUTFYLL* ATR / *PUTFYLL* ATR ATR 
+    5  *PUTFYLL* KOORD / *PUTFYLL* 
+    5  *SUBJ* ATR / *SUBJ* 
+    5  KONJ *KOORD* DOBJ / KONJ *KOORD* DOBJ ADV 
+
+
+  5 focus words where most of the errors occur:
+
+             | any  | head | dep  | both
+  -----------+------+------+------+------
+  i / prep   |  237 |  220 |  180 |  163
+  på / prep  |   97 |   87 |   83 |   73
+  til / prep |   85 |   73 |   66 |   54
+  for / prep |   77 |   74 |   57 |   54
+  det / pron |   75 |    7 |   73 |    5
+  -----------+------+------+------+------
+
+
+  one-token preceeding contexts where most of the errors occur:
+
+  CPOS       | any  | head | dep  | both  ||  word                     | any  | head | dep  | both
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+  subst      |  991 |  888 |  798 |  695  ||  , / <komma>              |  206 |  167 |  133 |   94
+  verb       |  347 |  169 |  269 |   91  ||  og / konj                |   94 |   85 |   35 |   26
+  adj        |  320 |  238 |  221 |  139  ||  er / verb                |   48 |   27 |   31 |   10
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+
+
+  two-token preceeding contexts where most of the errors occur:
+
+  CPOS       | any  | head | dep  | both  ||  word                     | any  | head | dep  | both
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+  prep+subst |  227 |  209 |  176 |  158  ||  , / <komma> + og / konj  |   17 |   13 |    7 |    3
+  .S+.S      |  195 |   92 |  161 |   58  ||  .S + - / <strek>         |   11 |    9 |    3 |    1
+  verb+subst |  164 |  139 |  155 |  130  ||  , / <komma> + men / konj |   10 |    4 |    7 |    1
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+
+
+  one-token following contexts where most of the errors occur:
+
+  CPOS       | any  | head | dep  | both  ||  word                     | any  | head | dep  | both
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+  subst      |  931 |  787 |  747 |  603  ||  . / clb                  |  152 |  109 |  124 |   81
+  prep       |  431 |  288 |  324 |  181  ||  , / <komma>              |  128 |   95 |  101 |   68
+  verb       |  420 |  242 |  335 |  157  ||  i / prep                 |   86 |   60 |   62 |   36
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+
+
+  two-token following contexts where most of the errors occur:
+
+  CPOS       | any  | head | dep  | both  ||  word                     | any  | head | dep  | both
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+  prep+subst |  211 |  147 |  156 |   92  ||  . / clb + .E             |  152 |  109 |  124 |   81
+  subst+clb  |  188 |  160 |  155 |  127  ||  , / <komma> + og / konj  |   13 |    9 |   11 |    7
+  subst+prep |  185 |  159 |  144 |  118  ||  | / clb + .E             |   10 |    5 |   10 |    5
+  -----------+------+------+------+-------++---------------------------+------+------+------+-----
+
+
+  Sentence with the highest number of word errors:
+   Sentence 29 line 499, 13 head errors, 9 dependency errors, 15 word errors
+
+
+  Sentence with the highest number of head errors:
+   Sentence 29 line 499, 13 head errors, 9 dependency errors, 15 word errors
+
+
+  Sentence with the highest number of dependency errors:
+   Sentence 29 line 499, 13 head errors, 9 dependency errors, 15 word errors
+
+
+  Specific errors, 10 most frequent errors:
+  =========================================
+
+   1. head two words after the correct head (before the focus word), correct dependency : 96 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  40
+          |      |           |      | subst   |      |  32
+  subst   |      |           |      |         |      |  32
+          |      | subst     |      |         |      |  30
+          |      | prep      |      | subst   |      |  28
+  subst   |      | prep      |      |         |      |  22
+          |      | verb      |      |         |      |  19
+  --------+------+-----------+------+---------+------+------
+
+   2. correct head (after the focus word), dependency "FSUBJ" instead of "SUBJ" : 63 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | pron      |      | verb    |      |  63
+          |      | pron      | Det  | verb    |      |  35
+  .S      |      |           |      | verb    |      |  33
+  .S      | .S   | pron      | Det  | verb    |      |  33
+          |      | pron      |      | verb    | er   |  32
+          |      | pron      | det  | verb    |      |  28
+          |      | pron      | Det  | verb    | er   |  20
+          | .S   |           |      |         | er   |  18
+  .S      |      |           |      |         | er   |  18
+  .S      | .S   | pron      | Det  | verb    | er   |  18
+  --------+------+-----------+------+---------+------+------
+
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 58 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  56
+  subst   |      |           |      |         |      |  53
+  subst   |      | prep      |      |         |      |  52
+          |      |           |      | subst   |      |  38
+          |      | prep      |      | subst   |      |  36
+  subst   |      |           |      | subst   |      |  36
+  subst   |      | prep      |      | subst   |      |  35
+  --------+------+-----------+------+---------+------+------
+
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 58 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  56
+  subst   |      |           |      |         |      |  52
+  subst   |      | prep      |      |         |      |  51
+          |      | prep      |      | subst   |      |  30
+  subst   |      | prep      |      | subst   |      |  27
+          |      | prep      | i    |         |      |  14
+  subst   |      | prep      | i    |         |      |  13
+  --------+------+-----------+------+---------+------+------
+
+   5. head one word after the correct head (before the focus word), correct dependency : 55 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  26
+          |      | subst     |      |         |      |  22
+  subst   |      |           |      |         |      |  20
+          |      |           |      | subst   |      |  16
+          |      | prep      |      | subst   |      |  14
+  adj     |      |           |      |         |      |  12
+  subst   |      | subst     |      |         |      |  11
+  adj     |      | prep      |      |         |      |  11
+  --------+------+-----------+------+---------+------+------
+
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 52 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  52
+  subst   |      | prep      |      |         |      |  46
+          |      | prep      |      | subst   |      |  26
+  subst   |      | prep      |      | subst   |      |  24
+          |      | prep      | i    |         |      |  18
+  subst   |      | prep      | i    |         |      |  16
+          |      | prep      | i    | subst   |      |  11
+  subst   |      | prep      | i    | subst   |      |  10
+  subst   |      | prep      |      | det     |      |  10
+  --------+------+-----------+------+---------+------+------
+
+   7. head one word after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 43 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  41
+  subst   |      | prep      |      |         |      |  40
+          |      | prep      |      | subst   |      |  23
+  subst   |      | prep      |      | subst   |      |  22
+  subst   |      | prep      | til  |         |      |  12
+  subst   |      | prep      | for  |         |      |   9
+          |      | prep      | i    | subst   |      |   7
+  --------+------+-----------+------+---------+------+------
+
+   8. correct head (before the focus word), dependency "DOBJ" instead of "SUBJ" : 43 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | subst     |      |         |      |  35
+  verb    |      |           |      |         |      |  22
+          |      |           |      | prep    |      |  20
+          |      | subst     |      | prep    |      |  16
+  verb    |      | subst     |      |         |      |  15
+  verb    |      |           |      | prep    |      |  12
+          |      |           |      | <komma> | ,    |   8
+  verb    |      | subst     |      | prep    |      |   8
+  det     |      |           |      |         |      |   8
+  --------+------+-----------+------+---------+------+------
+
+   9. head three words after the correct head (before the focus word), correct dependency : 42 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  20
+          |      |           |      | subst   |      |  13
+  subst   |      | prep      |      |         |      |  11
+          |      | prep      |      | subst   |      |   9
+          |      | verb      |      |         |      |   9
+          |      | ukjent    |      |         |      |   9
+  ukjent  |      | ukjent    |      |         |      |   8
+  --------+------+-----------+------+---------+------+------
+
+  10. head one word before the correct head (before the focus word), correct dependency : 41 times
+  --------+------+-----------+------+---------+------+------
+    Before       |    Focus         |   After        | Count
+  CPOS      word | CPOS        word | CPOS      word |
+  --------+------+-----------+------+---------+------+------
+          |      | prep      |      |         |      |  26
+          |      |           |      | subst   |      |  18
+  adj     |      | prep      |      |         |      |  18
+          |      | prep      |      | subst   |      |  16
+  adj     |      | prep      |      | subst   |      |  11
+          |      | verb      |      |         |      |   8
+  subst   |      |           |      |         |      |   7
+  adj     |      | prep      | i    |         |      |   7
+  --------+------+-----------+------+---------+------+------
+
+
+  Local contexts involved in several frequent errors:
+  ===================================================
+
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      | prep      |      |         |      
+  --------+------+-----------+------+---------+------
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 56 times
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 56 times
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 52 times
+   7. head one word after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 41 times
+   1. head two words after the correct head (before the focus word), correct dependency : 40 times
+  10. head one word before the correct head (before the focus word), correct dependency : 26 times
+   5. head one word after the correct head (before the focus word), correct dependency : 26 times
+   9. head three words after the correct head (before the focus word), correct dependency : 20 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      | prep      |      | subst   |      
+  --------+------+-----------+------+---------+------
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 36 times
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 30 times
+   1. head two words after the correct head (before the focus word), correct dependency : 28 times
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 26 times
+   7. head one word after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 23 times
+  10. head one word before the correct head (before the focus word), correct dependency : 16 times
+   5. head one word after the correct head (before the focus word), correct dependency : 14 times
+   9. head three words after the correct head (before the focus word), correct dependency : 9 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+  subst   |      | prep      |      |         |      
+  --------+------+-----------+------+---------+------
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 52 times
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 51 times
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 46 times
+   7. head one word after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 40 times
+   1. head two words after the correct head (before the focus word), correct dependency : 22 times
+   9. head three words after the correct head (before the focus word), correct dependency : 11 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      |           |      | subst   |      
+  --------+------+-----------+------+---------+------
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 38 times
+   1. head two words after the correct head (before the focus word), correct dependency : 32 times
+  10. head one word before the correct head (before the focus word), correct dependency : 18 times
+   5. head one word after the correct head (before the focus word), correct dependency : 16 times
+   9. head three words after the correct head (before the focus word), correct dependency : 13 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+  subst   |      |           |      |         |      
+  --------+------+-----------+------+---------+------
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 53 times
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 52 times
+   1. head two words after the correct head (before the focus word), correct dependency : 32 times
+   5. head one word after the correct head (before the focus word), correct dependency : 20 times
+  10. head one word before the correct head (before the focus word), correct dependency : 7 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+  subst   |      | prep      |      | subst   |      
+  --------+------+-----------+------+---------+------
+   3. head two words before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 35 times
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 27 times
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 24 times
+   7. head one word after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 22 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      | subst     |      |         |      
+  --------+------+-----------+------+---------+------
+   8. correct head (before the focus word), dependency "DOBJ" instead of "SUBJ" : 35 times
+   1. head two words after the correct head (before the focus word), correct dependency : 30 times
+   5. head one word after the correct head (before the focus word), correct dependency : 22 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      | verb      |      |         |      
+  --------+------+-----------+------+---------+------
+   1. head two words after the correct head (before the focus word), correct dependency : 19 times
+   9. head three words after the correct head (before the focus word), correct dependency : 9 times
+  10. head one word before the correct head (before the focus word), correct dependency : 8 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+  adj     |      | prep      |      |         |      
+  --------+------+-----------+------+---------+------
+  10. head one word before the correct head (before the focus word), correct dependency : 18 times
+   5. head one word after the correct head (before the focus word), correct dependency : 11 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+  subst   |      | prep      | i    |         |      
+  --------+------+-----------+------+---------+------
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 16 times
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 13 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      | prep      | i    | subst   |      
+  --------+------+-----------+------+---------+------
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 11 times
+   7. head one word after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 7 times
+
+  --------+------+-----------+------+---------+------
+    Before       |    Focus         |   After        
+  CPOS      word | CPOS        word | CPOS      word 
+  --------+------+-----------+------+---------+------
+          |      | prep      | i    |         |      
+  --------+------+-----------+------+---------+------
+   6. head three words after the correct head (before the focus word), dependency "ATR" instead of "ADV" : 18 times
+   4. head one word before the correct head (before the focus word), dependency "ADV" instead of "ATR" : 14 times
+
