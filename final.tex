@@ -698,13 +698,13 @@ Danish parsing experiments: \cite{Joh:Alo:Pla:15} orig 84.38 -> ud 81.56
 Bulgarian \cite{Ose:Sim:15}: orig 89.14 -> ud 83.5
 
 The tagging was performed by SVMTool\footnote{\url{cs.upc.edu/~nlp/SVMTool}}
-employing strategy 1, which proved to be optimal for parsing NDT in previous
-work ((Hohle, 2016; forthcoming)). The original tag set of NDT comprises 19
-tags, 12 of which are morphosyntactic tags, while its fine-grained counterpart
-(concatenation of tag and set of morphological features) totals 368 tags. The
-corresponding fine-grained tag set of UD comprises 169 tags. We see that
-tagging accuracy is higher on NDT with the original tag set, while UD surpasses
-NDT when using the fine-grained tag set. This is as expected, as the
+\cite{Gim:Mar:04}, employing strategy 1, which proved to be optimal for parsing
+NDT in previous work ((Hohle, 2016; forthcoming)). The original tag set of NDT
+comprises 19 tags, 12 of which are morphosyntactic tags, while its fine-grained
+counterpart (concatenation of tag and set of morphological features) totals 368
+tags. The corresponding fine-grained tag set of UD comprises 169 tags. We see
+that tagging accuracy is higher on NDT with the original tag set, while UD
+surpasses NDT when using the fine-grained tag set. This is as expected, as the
 fine-grained tag set of NDT contains almost 200 more tags than that of UD,
 which markedly complicates the tagging.
 
@@ -713,18 +713,48 @@ which markedly complicates the tagging.
         data sets and tag sets},
     label=tb:taggingeval,
 ]{llll}{}{
-        \FL
-        & & \multicolumn{2}{c}{Accuracy}
-        \NN
-        \cmidrule(lr){3-4}
-        Data set & Tag set & NDT & UD
-        \ML
-        Dev & Coarse/original & \textbf{97.90\%} & 96.96\% \\
-        Dev & Fine/full & 93.74\% & \textbf{94.59\%} \\
-        Test & Coarse/original & \textbf{97.82\%} & 96.82\% \\
-        Test & Fine/full & 93.19\% & \textbf{94.15\%}
-        \LL
-    }
+    \FL
+    & & \multicolumn{2}{c}{Accuracy}
+    \NN
+    \cmidrule(lr){3-4}
+    Data set & Tag set & NDT & UD
+    \ML
+    Dev & Coarse/original & \textbf{97.90\%} & 96.96\% \\
+    Dev & Fine/full & 93.74\% & \textbf{94.59\%} \\
+    Test & Coarse/original & \textbf{97.82\%} & 96.82\% \\
+    Test & Fine/full & 93.19\% & \textbf{94.15\%}
+    \LL
+}
+
+NDT and Norwegian UD was parsed with the Mate
+parser\footnote{\url{code.google.com/archive/p/mate-tools}} \cite{Boh:10}, as
+it proved best in related work on parsing of NDT ((Solberg et al., 2014)). It
+was run on dev and test set in separate experiments, with either gold or
+automatic tags (i.e., tags as predicted by SVMTool as described above).  When
+using automatic tags, the morphological features are excluded from the data,
+for the most realistic comparison and due to the incompatibility with automatic
+tags and `gold' features. NDT obtained the highest LAS and UAS in all
+experiments, unsurprisingly ((as some of the design choices in UD are known to
+cause a drop in parser accuracy))
+
+\ctable[botcap,
+    caption={Overview of the results from parsing NDT and UD with the various
+        data sets and tag setups},
+    label=tb:parsingeval,
+]{llllll}{}{
+    \FL
+    & & \multicolumn{2}{c}{LAS} & \multicolumn{2}{c}{UAS}
+    \NN
+    \cmidrule(lr){3-4}
+    \cmidrule(lr){5-6}
+    Data & Tags & NDT & UD & NDT & UD
+    \ML
+    Dev & Gold & \textbf{90.15\%} & 88.50\% & \textbf{92.51\%} & 91.13\% \\
+    Dev & Auto & \textbf{86.73\%} & 83.91\% & \textbf{89.99\%} & 87.16\% \\
+    Test & Gold & \textbf{90.55\%} & 88.54\% & \textbf{92.76\%} & 91.21\% \\
+    Test & Auto & \textbf{86.76\%} & 83.86\% & \textbf{90.13\%} & 87.16\%
+    \LL
+}
 %% \paragraph{Relative clauses}
 %% In many languages, relative markers are pronouns. In Norwegian, there
 %% are good reasons for choosing to treat the relative marker {\it som}
