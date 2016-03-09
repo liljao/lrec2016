@@ -25,41 +25,34 @@
 
 \setlength\textfloatsep{3.5mm}
 
-\title{Norwegian Universal Dependencies}
-%\title{Universal Dependencies for Norwegian}
+%\title{Norwegian Universal Dependencies}
+\title{Universal Dependencies for Norwegian}
 
-\name{Lilja {\O}vrelid, Petter Hohle}
+\name{Lilja {\O}vrelid,\hspace{0.1cm} Petter Hohle}
 
-\address{Department of Informatics \\
-University of Oslo \\
-\tt liljao@ifi.uio.no, pettehoh@ifi.uio.no\\}
+\address{Department of Informatics,\\ University of Oslo \\
+\texttt{$\{$liljao,pettehoh$\}$@ifi.uio.no}}
 
 \date{}
 
 \frenchspacing
 
-\abstract{
-This article describes the conversion of the Norwegian Dependency Treebank to the Universal Dependencies scheme. This paper details the
-mapping of PoS tags, morphological features and dependency relations
-and provides a description of the structural changes made to NDT
-analyses in order to make it compliant with the UD guidelines. We
-further present the PoS-tagging and dependency parsing experiments which
-contrast the performance of several state-of-the-art taggers and
-parsers on the original and converted treebank. The full converted
-treebank was made available with the 1.2 release of the UD treebanks.\\
+\abstract{ This article describes the conversion of the Norwegian
+  Dependency Treebank to the Universal Dependencies scheme. This paper
+  details the mapping of PoS tags, morphological features and
+  dependency relations and provides a description of the structural
+  changes made to NDT analyses in order to make it compliant with the
+  UD guidelines. We further present PoS-tagging and dependency parsing
+  experiments which report first results for the processing of the
+  converted treebank. The full converted treebank was made available
+  with the 1.2 release of the UD treebanks.\\
 \newline
 \Keywords{Dependency treebanks, Universal Dependencies, dependency parsing} }
 
 \begin{document}
 \maketitleabstract
 
-%% TO-DO:
-%% - parse experiments: malt, mst, mate, Petter
-%% - ref Danish UD
-%% - ref BulTreeBank results
-
 \section{Introduction}
-%323
 With the increasing popularity of dependency-based representations of
 syntactic structure in recent years, a wealth of different dependency
 annotation schemes have surfaced. It has been shown that the choice of
@@ -81,8 +74,8 @@ and new data has also been annotated from scratch in order to enable
 multilingual parser development, cross-lingual learning and
 typological studies of syntactic structure. Treebanks involved in this
 effort represent a diverse range of languages such as English, German,
-Swedish, Spanish, Italian, Persian, Japanese, and the UD release 1.1
-contains treebanks for as many as 34 different languages of varying
+Swedish, Spanish, Italian, Persian, Japanese, and the UD release 1.2
+contains treebanks for as many as 33 different languages of varying
 sizes.
 
 This paper describes a fully automatic conversion procedure for the
@@ -94,11 +87,11 @@ various kinds of linguistic information.  This paper details the
 mapping of PoS tags, morphological features and dependency relations
 and provides a description of the structural changes made to NDT
 analyses in order to make it compliant with the UD guidelines. We
-further present the PoS-tagging and dependency parsing experiments which
-contrast the performance of several state-of-the-art taggers and
-parsers on the original and converted treebank. The full converted
+further present PoS-tagging and dependency parsing experiments which
+contrast the performance of a state-of-the-art PoS-tagger and
+dependency parser on the original and converted treebank. The full converted
 treebank was made available with the 1.2 release of the UD treebanks
-\cite{Niv:Mar:Gin:16}.
+\cite{Niv:Mar:Gin:16}, which contains 37 treebanks for a total of 33 different languages.
 
 
 \section{NDT and UD}
@@ -303,54 +296,59 @@ chain.
 \item\label{ex:verb}
 \begin{minipage}[t]{3cm}
 a)
-    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+%        \begin{deptext}
         \begin{deptext}[column sep=.2cm]
             skal \& ha \& sett \\
             \w{shall} \& \w{have} \& \w{seen}\\
         \end{deptext}
-    \depedge{1}{2}{\large\sc infv}
-    \depedge{2}{3}{\large\sc infv}
-    \deproot[edge unit distance=1.5ex]{1}{\large\sc }
+    \depedge{1}{2}{\sc infv}
+    \depedge{2}{3}{\sc infv}
+    \deproot[edge unit distance=1.5ex,hide label]{1}{}
     \end{dependency}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{3cm}
 b)
 %\item\label{ex:ndt-verb}
-    \begin{dependency}[arc edge, text only label, theme=simple]
-        \begin{deptext}[column sep=.5cm]
+    \begin{dependency}
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+        \begin{deptext}[column sep=.3cm]
             skal \& ha \& sett \\
             \w{shall} \& \w{have} \& \w{seen}\\
         \end{deptext}
-    \depedge{3}{1}{\large aux}
-    \depedge{3}{2}{\large aux}
-    \deproot[edge unit distance=1.5ex]{3}{\large }
+    \depedge{3}{1}{aux}
+    \depedge{3}{2}{aux}
+    \deproot[edge unit distance=1.5ex,hide label]{3}{\large }
     \end{dependency}
 \end{minipage}
 \item\label{ex:infmark}
 \begin{minipage}[t]{3cm}
 a)
-    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
+%    \begin{dependency}[arc edge, text only label, theme=simple]
         \begin{deptext}[column sep=.2cm]
             {\aa} \& ha \& sett \\
             \w{to} \& \w{have} \& \w{seen}\\
         \end{deptext}
-    \depedge{1}{2}{\large\sc infv}
-    \depedge{2}{3}{\large\sc infv}
-    \deproot[edge unit distance=1.5ex]{1}{}
+    \depedge{1}{2}{\sc infv}
+    \depedge{2}{3}{\sc infv}
+    \deproot[edge unit distance=1.5ex,hide label]{1}{}
     \end{dependency}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{3cm}
 b)
-    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
+%    \begin{dependency}[arc edge, text only label, theme=simple]
         \begin{deptext}[column sep=.5cm]
             {\aa} \& ha \& sett \\
             \w{to} \& \w{have} \& \w{seen}\\
         \end{deptext}
-    \depedge{3}{1}{\large mark}
-    \depedge{3}{2}{\large aux}
-    \deproot[edge unit distance=1.5ex]{3}{}
+    \depedge{3}{1}{mark}
+    \depedge{3}{2}{aux}
+    \deproot[edge unit distance=1.5ex,hide label]{3}{}
     \end{dependency}
 \end{minipage}
 \end{examples}
@@ -369,28 +367,30 @@ all its dependents to the predicative element.
 \item\label{ex:cop}
 \begin{minipage}[t]{3cm}
 a)
-    \begin{dependency}[arc edge, text only label, theme=simple]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
             de \& er \& fattige \\
             \w{they} \& \w{are} \& \w{poor}\\
         \end{deptext}
-    \depedge{2}{1}{\large\sc subj}
-    \depedge{2}{3}{\large\sc spred}
-    \deproot[edge unit distance=1.5ex]{2}{\large\sc finv}
+    \depedge{2}{1}{\sc subj}
+    \depedge{2}{3}{\sc spred}
+    \deproot[edge unit distance=2ex]{2}{\sc finv}
     \end{dependency}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{3cm}
 b)
 %\item\label{ex:ndt-verb}
-    \begin{dependency}[arc edge, text only label, theme=simple]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
         \begin{deptext}[column sep=.4cm]
             de \& er \& fattige\\
             \w{they} \& \w{are} \& \w{poor}\\
         \end{deptext}
-    \depedge{3}{1}{\large nsubj}
-    \depedge{3}{2}{\large cop}
-    \deproot[edge unit distance=1.5ex]{3}{\large root}
+    \depedge{3}{1}{nsubj}
+    \depedge{3}{2}{cop}
+    \deproot[edge unit distance=2ex]{3}{ root}
     \end{dependency}
 \end{minipage}
 \end{examples}
@@ -408,25 +408,27 @@ the preposition using the {\tt case} relation, see (\ref{ex:prep}b). In conversi
 \item\label{ex:prep}
 \begin{minipage}[t]{2.5cm}
 a)
-    \begin{dependency}[arc edge, text only label, theme=simple]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
             p{\aa} \& menyen \\
             \w{on} \& \w{menu-the} \\
         \end{deptext}
-    \depedge{1}{2}{\large\sc putfyll}
-    \deproot[edge unit distance=1.5ex]{1}{}
+    \depedge{1}{2}{\sc putfyll}
+    \deproot[edge unit distance=1.5ex,hide label]{1}{}
     \end{dependency}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{2.5cm}
 b)
-    \begin{dependency}[arc edge, text only label, theme=simple]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
             p{\aa} \& menyen \\
             \w{on} \& \w{menu-the} \\
         \end{deptext}
-    \depedge{2}{1}{\large case}
-    \deproot[edge unit distance=1.5ex]{2}{}
+    \depedge{2}{1}{case}
+    \deproot[edge unit distance=1.5ex,hide label]{2}{}
     \end{dependency}
 \end{minipage}
 \end{examples}
@@ -448,29 +450,33 @@ predicatives are attached as adverbial clauses ({\tt acl}) modifying the argumen
 they characterize, see (\ref{ex:pred}b). Our conversion thus attaches the {\tt FSPRED} argument to its sibling subject argument, {\tt FOPRED} to an object sibling.
 %65
 \begin{examples}
-\item\label{ex:pred}
-\begin{itemize}
-\item[(a)]
-    \begin{dependency}[arc edge, text only label, theme=simple]
+\item\label{ex:pred} 
+(a)\\
+%\begin{itemize}
+%\item[(a)]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
           taler \& Solstad \& uredd \\
           \w{speaks} \& \w{Solstad} \& \w{unscared} \\
         \end{deptext}
-            \depedge{1}{2}{\large\sc subj}
-            \depedge{1}{3}{\large\sc fspred}
-            \deproot[edge unit distance=1.5ex]{1}{}
+            \depedge{1}{2}{\sc subj}
+            \depedge{1}{3}{\sc fspred}
+            \deproot[edge unit distance=1.5ex,hide label]{1}{}
     \end{dependency}
-\item[(b)]
-    \begin{dependency}[arc edge, text only label, theme=simple]
+\\(b)\\
+%\item[(b)]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
           taler \& Solstad \& uredd \\
           \w{speaks} \& \w{Solstad} \& \w{unscared} \\
         \end{deptext}
-            \depedge{1}{2}{\large nsubj}
-            \depedge{2}{3}{\large acl}
-            \deproot[edge unit distance=1.5ex]{1}{}
+            \depedge{1}{2}{nsubj}
+            \depedge{2}{3}{acl}
+            \deproot[edge unit distance=1.5ex,hide label]{1}{}
     \end{dependency}
-\end{itemize}
+%\end{itemize}
 \end{examples}
 
 
@@ -478,39 +484,44 @@ they characterize, see (\ref{ex:pred}b). Our conversion thus attaches the {\tt F
 %65
 Coordination is a phenomenon which exhibits considerable variation in terms
 of dependency representation across various annotation schemes \cite{Pop:Mar:Ste:13}.
-As we can see from the example in (\ref{ex:coord}), the analyses
-chosen in the NDT and UD schemes are fairly similar in their choice of
+As we can see in example in (\ref{ex:coord}), the analyses
+in the NDT and UD schemes are fairly similar in their choice of
 the first conjunct as head of the coordinate structure. They differ
 mainly in the attachment of the conjunction and the relation names.
 %88
+
 \begin{example}
 \label{ex:coord}
-\begin{itemize}
-\item[(a)]
-    \begin{dependency}[arc edge, text only label, theme=simple]
+%\begin{itemize}
+%\item[(a)]
+ %   \begin{dependency}[arc edge, text only label, theme=simple]
+(a)\\
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
           kamskjell \& , \& piggvar \& og \& lammefilet \\
           \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lambfilet}\\
         \end{deptext}
-            \depedge{1}{2}{\large\sc ik}
-            \depedge{1}{3}{\large\sc koord}
-            \depedge{1}{5}{\large\sc koord}
-            \depedge{5}{4}{\large\sc konj}
-            \deproot[edge unit distance=1.5ex]{1}{}
+            \depedge{1}{2}{\sc ik}
+            \depedge{1}{3}{\sc koord}
+            \depedge[edge unit distance=2ex]{1}{5}{\sc koord}
+            \depedge{5}{4}{\sc konj}
+            \deproot[edge unit distance=2ex,hide label]{1}{}
     \end{dependency}
-\item[(b)]
-    \begin{dependency}[arc edge, text only label, theme=simple]
+%\item[(b)]
+%    \begin{dependency}[arc edge, text only label, theme=simple]
+\\(b)\\
+    \begin{dependency}
         \begin{deptext}[column sep=.2cm]
           kamskjell \& , \& piggvar \& og \& lammefilet \\
           \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lambfilet}\\
         \end{deptext}
-            \depedge{1}{2}{\large punct}
-            \depedge{1}{3}{\large conj}
-            \depedge{1}{4}{\large cc}
-            \depedge{1}{5}{\large conj}
-            \deproot[edge unit distance=1.5ex]{1}{}
+            \depedge{1}{2}{punct}
+            \depedge{1}{3}{conj}
+            \depedge{1}{4}{cc}
+            \depedge{1}{5}{conj}
+            \deproot[hide label]{1}{}
     \end{dependency}
-\end{itemize}
+%\end{itemize}
 %\item\label{ex:ndt-verb}
 \end{example}
 
@@ -680,33 +691,54 @@ Total & 20045 & 311277
 
 
 
-\section{Tagging and parsing}
+\section{Tagging and parsing into UD}
 Without a gold standard for Norwegian UD dependencies it is difficult
 to evaluate our conversion directly. We may however, evaluate
 PoS-tagging and dependency parsing performance for the converted
 treebank.  In the following we report on a set of experiments which
-investigate the performance of a set of state-of-the-art PoS-taggers
-and parsers trained and evaluated on the converted Norwegian UD
-treebank.
+investigate the performance of a state-of-the-art PoS-tagger and
+parser trained and evaluated on the converted Norwegian UD
+treebank. Even though the data sets are not strictly comparable, we
+contrast the performance of the taggers and parsers with the results
+for the original NDT scheme. We further investigate the effect of
+using the automatically assigned PoS-tags during parsing in order to
+achieve a maximally realistic setting.
 
-As noted in previous work \cite{Mar:Doz:Sil:14}, several of the design
-choices of the UD scheme, such as the attachment of auxiliaries and
-prepositions, are known to cause a drop in parsing accuracy
-\cite{Sch:Abe:Rap:12}.
+\subsection{PoS-tagging}
+For PoS-tagging, we experiment with two different tag sets: a coarse
+tag set, consisting of the simple PoS-tags in the two schemes (NDT and
+UD), and a fine-grained set, which represents the concatenation of
+PoS-tag and the morphological features. The original tag set of NDT
+comprises 19 tags, 12 of which are morphosyntactic tags\footnote{The
+  remaining tags describe various types of punctuation, such as
+  commas, dashes, etc.}, while its fine-grained counterpart totals 368
+tags. For UD, the coarse-grained tag set consists of 17 tags and the
+corresponding fine-grained tag set of UD comprises 169 tags.
 
-Danish parsing experiments: \cite{Joh:Alo:Pla:15} orig 84.38 -> ud 81.56
-Bulgarian \cite{Ose:Sim:15}: orig 89.14 -> ud 83.5
+The PoS-tagging was performed by
+SVMTool\footnote{\url{cs.upc.edu/~nlp/SVMTool}} \cite{Gim:Mar:04},
+employing strategy 1, which proved to be optimal for tagging NDT in
+previous work \cite{Hohle:16}. All experiments are performed on the
+data splits detailed in Table \ref{tb:splits}.
 
-The tagging was performed by SVMTool\footnote{\url{cs.upc.edu/~nlp/SVMTool}}
-\cite{Gim:Mar:04}, employing strategy 1, which proved to be optimal for parsing
-NDT in previous work ((Hohle, 2016; forthcoming)). The original tag set of NDT
-comprises 19 tags, 12 of which are morphosyntactic tags, while its fine-grained
-counterpart (concatenation of tag and set of morphological features) totals 368
-tags. The corresponding fine-grained tag set of UD comprises 169 tags. We see
-that tagging accuracy is higher on NDT with the original tag set, while UD
-surpasses NDT when using the fine-grained tag set. This is as expected, as the
-fine-grained tag set of NDT contains almost 200 more tags than that of UD,
-which markedly complicates the tagging.
+The results for PoS-tagging are presented in Table
+\ref{tb:taggingeval}. The PoS-tagger obtains an accuracy of 96.96\% on
+the dev set and 96.82\% on the test set. For the fine-grained UD set
+the performance drops to 94.59\% (dev) and 94.15\% (test).
+
+In general, we observe that tagging accuracy is higher on NDT with the
+original tag set, while UD surpasses NDT when using the fine-grained
+tag set. This is as expected, as the fine-grained tag set of NDT
+contains almost 200 more tags than that of UD, which markedly
+complicates the tagging.
+
+An error analysis reveals that for both schemes, the recognition of
+interjections ({\tt interj, INTJ}) and unknown/foreign words ({\tt
+  ukjent, X}) are difficult. We further note that the UD distinction
+between auxiliaries and main verbs seems difficult to make. For the
+NDT-tagger, the {\tt verb} tag has an F-score of 97\%, whereas the UD
+{\tt VERB} and {\tt AUX} tags receive F-scores of 94\% and 91\%,
+respectively.
 
 \ctable[botcap,
     caption={Overview of the results from tagging NDT and UD with the various
@@ -719,23 +751,38 @@ which markedly complicates the tagging.
     \cmidrule(lr){3-4}
     Data set & Tag set & NDT & UD
     \ML
-    Dev & Coarse/original & \textbf{97.90\%} & 96.96\% \\
-    Dev & Fine/full & 93.74\% & \textbf{94.59\%} \\
-    Test & Coarse/original & \textbf{97.82\%} & 96.82\% \\
-    Test & Fine/full & 93.19\% & \textbf{94.15\%}
+    Dev & Coarse & 97.90\% & 96.96\% \\
+    Dev & Fine & 93.74\% & 94.59\% \\
+    Test & Coarse & 97.82\% & 96.82\% \\
+    Test & Fine & 93.19\% & 94.15\%
     \LL
 }
 
-NDT and Norwegian UD was parsed with the Mate
-parser\footnote{\url{code.google.com/archive/p/mate-tools}} \cite{Boh:10}, as
-it proved best in related work on parsing of NDT ((Solberg et al., 2014)). It
-was run on dev and test set in separate experiments, with either gold or
-automatic tags (i.e., tags as predicted by SVMTool as described above).  When
-using automatic tags, the morphological features are excluded from the data,
-for the most realistic comparison and due to the incompatibility with automatic
-tags and `gold' features. NDT obtained the highest LAS and UAS in all
-experiments, unsurprisingly ((as some of the design choices in UD are known to
-cause a drop in parser accuracy))
+\subsection{Dependency parsing}
+We perform a set of parse experiments in order to evaluate the the UD
+scheme for Norwegian, and further compare these results to those
+obtained using the original NDT schemes. In our experiments, we
+further contrast the use of gold vs. automatically assigned PoS-tags
+during training and testing. For the experiments using automatically
+assigned PoS-tags, the parser was both trained and tested on
+automatically assigned tags, as this proved to give slightly better
+results on the development set.
+
+All experiments are performed on the data splits detailed in Table
+\ref{tb:splits}. For the experiments, we employ the Mate
+parser\footnote{\url{code.google.com/archive/p/mate-tools}}
+\cite{Boh:10}, as it proved best in previous work on parsing of NDT
+\cite{Sol:Skj:Ovr:14}. It was run on dev and test sets in separate
+experiments, with either gold or automatic tags (i.e., the
+coarse-grained tags as predicted by SVMTool as described above).  When
+using automatic tags, the morphological features are excluded from the
+data set, for the most realistic comparison. 
+
+The parsing results are presented in Table \ref{tb:parsingeval}. We
+find that the UD-parser obtains a labeled accuracy score (LAS) of
+88.5\% on both the dev and test sets using gold standard PoS-tags. The
+corresponding results for the NDT-parser are 90.15\% (dev) and 90-55\%
+(test).
 
 \ctable[botcap,
     caption={Overview of the results from parsing NDT and UD with the various
@@ -749,109 +796,66 @@ cause a drop in parser accuracy))
     \cmidrule(lr){5-6}
     Data & Tags & NDT & UD & NDT & UD
     \ML
-    Dev & Gold & \textbf{90.15\%} & 88.50\% & \textbf{92.51\%} & 91.13\% \\
-    Dev & Auto & \textbf{86.73\%} & 83.91\% & \textbf{89.99\%} & 87.16\% \\
-    Test & Gold & \textbf{90.55\%} & 88.54\% & \textbf{92.76\%} & 91.21\% \\
-    Test & Auto & \textbf{86.76\%} & 83.86\% & \textbf{90.13\%} & 87.16\%
+    Dev & Gold & 90.15\% & 88.50\% & 92.51\% & 91.13\% \\
+    Dev & Auto & 86.73\% & 83.91\% & 89.99\% & 87.16\% \\
+    Test & Gold & 90.55\% & 88.54\% & 92.76\% & 91.21\% \\
+    Test & Auto & 86.76\% & 83.86\% & 90.13\% & 87.16\%
     \LL
 }
-%% \paragraph{Relative clauses}
-%% In many languages, relative markers are pronouns. In Norwegian, there
-%% are good reasons for choosing to treat the relative marker {\it som}
-%% 'that' as a subjunction \cite{Faa:Lie:Van:97}. This relative marker,
-%% unlike those found in many other languages does not inflect (as in
-%% English {\it who-whom}, or German {\it der-die-das}) and exclusively
-%% occurs initially in a subordinate clause. In our conversion we
-%% introduce a language-specific variant of the clausal relation {\tt
-%%   acl}, {\tt acl:relcl} which signals that this is a relative clause.
-%% %% The relative marker {\it som} 'that' receives an argument role based
-%% %% on a heuristic which checks for the presence or absence of other
-%% %% argument siblings.
-%69
-%% \begin{example}
-%% \label{ex:relclause}
-%% \begin{minipage}[t]{3cm}
-%% a)
-%%     \begin{dependency}[arc edge, text only label, theme=simple]
-%%         \begin{deptext}[column sep=.3cm]
-%%           dem \& som \& lider \\
-%%           \w{those} \& \w{who} \& \w{suffer} \\
-%%         \end{deptext}
-%%             \depedge{1}{3}{\large\sc atr}
-%%             \depedge{3}{2}{\large\sc sbu}
-%%             \deproot[edge unit distance=1.5ex]{1}{}
-%%     \end{dependency}
-%% \end{minipage}
-%% \hspace{0.5cm}
-%% \begin{minipage}[t]{3cm}
-%% b)
-%%     \begin{dependency}[arc edge, text only label, theme=simple]
-%%         \begin{deptext}[column sep=.3cm]
-%%           dem \& som \& lider \\
-%%           \w{those} \& \w{who} \& \w{suffer} \\
-%%         \end{deptext}
-%%             \depedge{1}{3}{\large acl:relcl}
-%%             \depedge{3}{2}{\large nsubj}
-%%             \deproot[edge unit distance=1.5ex]{1}{}
-%%     \end{dependency}
-%% \end{minipage}
-%% \end{example}
 
-%% \subsection{Numerical modifiers}
-%% UD distinguishes numerical modifiers of nouns, e.g. {\it 42,
-%%   fifty}. These are annotated as regular determiners in NDT, but are
-%% part of a larger group of quantifiers which receive the additional
-%% feature {\tt kvant}, e.g. {\it noen} 'some', {\it ingen} 'no'. In
-%% order to distinguish the numerical modifiers from the other
-%% quantifying determiners, we use a regular expression which recognizes
-%% digits and numerical expressions like {\it trettito} 'thirty-two'.
-%99
+The drop in results compared to the NDT scheme is not surprising. As
+noted in previous work \cite{Mar:Doz:Sil:14}, several of the design
+choices of the UD scheme, such as the attachment of auxiliaries and
+prepositions to content words, are known to be more difficult to parse
+than their reverse counterparts \cite{Sch:Abe:Rap:12}. The UD scheme
+is not primarily designed to give optimal parse results and is further
+designed to be cross-lingually applicable. A similar trend was
+observed for Danish UD parsing \cite{Joh:Alo:Pla:15}. They observed a
+drop in results from the original 84.38\% LAS to 81.56 \% LAS for UD.
+For Bulgarian, \newcite{Ose:Sim:15} observed a drop from 89.14\% to
+83.5\% for a preliminary version of their UD conversion for the BulTreeBank.
 
+In the experiments using automatically assigned tags (Auto), we
+combine the output of the taggers described in the previous section
+with the NDT and UD parsers. As expected, we observe a drop in parse
+results when we switch to automatically assigned PoS-tags. For the
+UD-parser, we observe a drop of 4.6 percentage point, whereas the
+corresponding figure for the NDT-parser is 3.4 percentage points (on
+the dev sets). It is clear that the somewhat lower tagging accuracy
+for the UD treebank influences parsing results. 
 
+An error analysis in terms of dependency relation assignment and
+attachment, shows that the distinction of various clausal dependency
+relations ({\tt acl, advcl, csubj, xcomp, ccomp}) are challenging for
+the parser. Also, the assignment of the expletive relation {\tt expl}
+is challenging for the UD parser. Since the neuter pronoun {\it det}
+'it' may be both referential and non-referential in Norwegian and has the same
+PoS-tag regardless of referentiality, this clearly constitutes a
+complex distinction.
 
-%TO-DO som is sconj, mark relation follows
-%TO-DO change code to treat relcl
-%TO-DO change description in paper, can still have acl:relcl
+\section{Conclusion}
+This article has presented a fully automatic conversion of the
+Norwegian Dependency Treebank to Universal Dependencies. The
+conversion consists of a set of mappings for PoS tags, morphological
+features and dependency relations as well as structural rewrite rules
+that transform the NDT analyses to Universal Dependencies. In order to
+evaluate the conversion we employ the treebank in a set of tagging and
+parsing experiments which show that even though the results are lower
+than for the original scheme, the UD version is still as viable option
+for processing of Norwegian text. The results are shown to be in line
+with those observed for several other UD converted treebanks.
 
+This article has presented the first release of the Norwegian UD
+treebank. The conversion is still under development, and we plan to
+release new versions along with the coming releases of the UD
+treebank. An important line of work in the time to come is to increase
+the consistency of the UD treebanks, and efforts are being made to
+make the Norwegian data set more consistent with the other Germanic
+treebanks in particular. We also plan to include the data for the
+other written variant of Norwegian (Nynorsk) from the original NDT
+treebank in one of the next releases.
 
-%% preposition stranding with particle analysis, correct correlate dobj:
-%% som henholdsvis Sveits og Norge har lagt ut
-
-%% preposition stranding, incorrect correlate dobj:
-%% en tid som vi er relativt godt fornøyd med
-%% et søppellag som vi ikke skal tape mot (wrong particle analysis)
-%% de store sakene som han arbeider med
-
-%% a different problem with analysis, "double correlate''.., not correct dobj analysis
-%% hva som foregikk i Norge på det aktuelle tidspunktet
-%% hva som blir hans nye klubb
-%% hvilke tiltak som kan bidra
-
-%% to prinsipper som begge er viktige ?? what is correlate
-
-%% no way of distinguishing relative clauses without relativizer (possible if correlate is something other than subject)..
-
-%% if decide to skip relclause analysis, should not treat som as pronoun!! Check NRG for argumentation, evidence that is not pronoun. What about Swedish??
-
-%% NRG:
-%% - not a pronoun in Norwegian, not conjugated (ubøyelig) and only occurs as initial element in subordinate clause
-
-%% - if so, should be 'mark'
-
-%TO-DO: UD relations not used: mwe, etc. check
-
-%% %Include this? Not quite sure about this argument. Is this a particle or not? tests..
-%% Another side effect of our treatment of particles is that not all intransitive prepositions are actually particles.
-%% One such case is caused by so-called \emph{preposition stranding}, where the complement of the preposition occurs elsewhere in the sentence, as in the relative clause in (\ref{ex:prep-strand}).
-%% \begin{examples}
-%% \item\label{ex:prep-strand}
-%% \gll en applikasjon de kan være stolte av
-%% an application they can be proud of
-%% \glt `an application they can be proud of'
-%% \glend
-%% \end{examples}
-
-\section{Bibliographical References}
+\section{References}
 \label{main:ref}
 
 \bibliographystyle{lrec2016}

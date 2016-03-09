@@ -1,5 +1,13 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citename{Bohnet}2010]{Boh:10}
+Bohnet, B.
+\newblock (2010).
+\newblock Very {H}igh {A}ccuracy and {F}ast {D}ependency {P}arsing is not a
+  {C}ontradiction.
+\newblock In {\em Proceedings of the 23rd {I}nternational {C}onference on
+  {C}omputational {L}inguistics}, pages 89--97, Beijing, China.
+
 \bibitem[\protect\citename{de Marneffe \bgroup et al.\egroup
   }2006]{Mar:Mac:Man:06}
 de~Marneffe, M.-C., MacCartney, B., and Manning, C.~D.
@@ -33,11 +41,25 @@ Faarlund, J.~T., Lie, S., and Vannebo, K.~I.
 \newblock {\em Norsk referansegrammatikk}.
 \newblock Universitetsforlaget, Oslo, Norway.
 
+\bibitem[\protect\citename{Gim{\'e}nez and M{\`a}rquez}2004]{Gim:Mar:04}
+Gim{\'e}nez, J. and M{\`a}rquez, L.
+\newblock (2004).
+\newblock S{VMT}ool: {A} {G}eneral {POS} {T}agger {G}enerator {B}ased on
+  {S}upport {V}ector {M}achines.
+\newblock In {\em Proceedings of the {F}ourth {I}nternational {C}onference on
+  {L}anguage {R}esources and {E}valuation}, pages 43--46, Lisbon, Portugal.
+
 \bibitem[\protect\citename{Hagen \bgroup et al.\egroup }2000]{Hag:Joh:Nok:00}
 Hagen, K., Johannessen, J.~B., and N{\o}klestad, A.
 \newblock (2000).
 \newblock A constraint-based tagger for norwegian.
 \newblock In {\em 17th Scandinavian Conference in Linguistics}, pages 31--48.
+
+\bibitem[\protect\citename{Hohle}2016]{Hohle:16}
+Hohle, P.
+\newblock (2016).
+\newblock Th effect of tag set granularity on parsing performance in norwegian.
+\newblock Master's thesis, Dept. of Informatics, University of Oslo.
 
 \bibitem[\protect\citename{Ivanova \bgroup et al.\egroup }2012]{Iva:Oep:Ovr:12}
 Ivanova, A., Oepen, S., {\O}vrelid, L., and Flickinger, D.
@@ -137,7 +159,7 @@ Popel, M., Mare\v{c}ek, D., \v{S}t\v{e}p\'{a}nek, J., Zeman, D., and
   }2015]{Pyy:Kan:Miss:15}
 Pyysalo, S., Kanerva, J., Missil{\"a}, A., Laippala, V., and Ginter, F.
 \newblock (2015).
-\newblock Universal dependencies for finnish.
+\newblock {U}niversal {D}ependencies for {F}innish.
 \newblock In {\em Proceedings of the Nordic Conference of Computational
   Linguistics ({NODALIDA})}.
 

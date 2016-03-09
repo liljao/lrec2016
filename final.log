@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.19)  2 MAR 2016 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.19)  9 MAR 2016 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,25 +872,28 @@ Package ctable Warning:  Transparency disabled: incompatible with tikz package
 \@CToldrule=\dimen266
 \CT@t=\box70
 \@CTcurftwidth=\dimen267
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/relsize/relsize.sty
-Package: relsize 2013/03/29 ver 4.1
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(./final.aux)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+) (./final.aux)
 \openout1 = `final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 52.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -953,115 +956,115 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 54.
+(Font)              <7> on input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 54.
+(Font)              <5> on input line 53.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 54.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 53.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 111.
+(Font)              <9> on input line 104.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 111.
+(Font)              <6> on input line 104.
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-Overfull \hbox (6.18898pt too wide) in paragraph at lines 267--267
+Overfull \hbox (6.18898pt too wide) in paragraph at lines 260--260
 []|\T1/pcr/m/n/10 Gender=Masc,Fem,Neut| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
 []|\T1/pcr/m/n/10 Mood=Ind,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
 \T1/pcr/m/n/10 Tense=Pres,Past,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
 []|\T1/pcr/m/n/10 Mood=Imp,
  []
 
 [2]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 279.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 272.
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--315
+Underfull \hbox (badness 10000) in paragraph at lines 298--310
 []\T1/ptm/m/n/10 a)
  []
 
 
-Overfull \hbox (2.29774pt too wide) in paragraph at lines 305--315
+Overfull \hbox (2.29774pt too wide) in paragraph at lines 298--310
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--329
+Underfull \hbox (badness 10000) in paragraph at lines 313--325
 []\T1/ptm/m/n/10 b)
  []
 
 
-Overfull \hbox (19.36955pt too wide) in paragraph at lines 318--329
+Overfull \hbox (7.98863pt too wide) in paragraph at lines 313--325
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--342
+Underfull \hbox (badness 10000) in paragraph at lines 328--339
 []\T1/ptm/m/n/10 a)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--355
+Underfull \hbox (badness 10000) in paragraph at lines 342--353
 []\T1/ptm/m/n/10 b)
  []
 
 
-Overfull \hbox (7.68987pt too wide) in paragraph at lines 345--355
+Overfull \hbox (7.68987pt too wide) in paragraph at lines 342--353
 [] 
  []
 
 
-Underfull \hbox (badness 1248) in paragraph at lines 361--368
+Underfull \hbox (badness 1248) in paragraph at lines 359--366
 []\T1/ptm/m/n/10 The treat-ment of cop-ula con-struc-tions within the UD
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--381
+Underfull \hbox (badness 10000) in paragraph at lines 369--380
 []\T1/ptm/m/n/10 a)
  []
 
 
-Overfull \hbox (0.95769pt too wide) in paragraph at lines 371--381
+Overfull \hbox (0.95769pt too wide) in paragraph at lines 369--380
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--395
+Underfull \hbox (badness 10000) in paragraph at lines 383--395
 []\T1/ptm/m/n/10 b)
  []
 
 
-Overfull \hbox (12.33861pt too wide) in paragraph at lines 384--395
+Overfull \hbox (12.33861pt too wide) in paragraph at lines 383--395
 [] 
  []
 
@@ -1077,87 +1080,96 @@ m/n/10 la-bel, see
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 410--420
 []\T1/ptm/m/n/10 a)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--431
+Underfull \hbox (badness 10000) in paragraph at lines 423--433
 []\T1/ptm/m/n/10 b)
  []
 
 [3]
-Underfull \hbox (badness 1342) in paragraph at lines 597--602
+Underfull \hbox (badness 1342) in paragraph at lines 608--613
  \T1/ptm/b/n/10 Nega-tion \T1/ptm/m/n/10 UD dis-tin-guishes nega-tion mod-i-fie
 rs which
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 653--653
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 []|\T1/pcr/m/n/10 advcl, advmod,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--653
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 \T1/pcr/m/n/10 compound:prt, neg,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--653
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 []|\T1/pcr/m/n/10 acl:relcl, amod,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--653
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 []|\T1/pcr/m/n/10 nsubj, nsubjpass,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--653
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 []|\T1/pcr/m/n/10 nsubj, nsubjpass,
  []
 
-[4] (./final.bbl
-Underfull \hbox (badness 2261) in paragraph at lines 5--10
-\T1/ptm/m/n/10 (2006).  Gen-er-at-ing typed de-pen-dency parses from
- []
 
-
-Underfull \hbox (badness 1406) in paragraph at lines 90--97
-\T1/ptm/m/it/10 Con-fer-ence on Lan-guage Re-sources and Eval-u-a-tion
+Underfull \hbox (badness 1701) in paragraph at lines 735--742
+[]\T1/ptm/m/n/10 An er-ror anal-y-sis re-veals that for both schemes, the
  []
 
 [5]
-Underfull \hbox (badness 1178) in paragraph at lines 154--159
+Underfull \hbox (badness 2088) in paragraph at lines 818--826
+[]\T1/ptm/m/n/10 In the ex-per-i-ments us-ing au-to-mat-i-cally as-signed tags
+ []
+
+(./final.bbl
+Underfull \hbox (badness 2261) in paragraph at lines 13--18
+\T1/ptm/m/n/10 (2006).  Gen-er-at-ing typed de-pen-dency parses from
+ []
+
+[6]
+Underfull \hbox (badness 1406) in paragraph at lines 112--119
+\T1/ptm/m/it/10 Con-fer-ence on Lan-guage Re-sources and Eval-u-a-tion
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 176--181
 []\T1/ptm/m/n/10 Schwartz, R., Abend, O., and Rap-poport, A.  (2012).
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 175--181
+Underfull \hbox (badness 1509) in paragraph at lines 197--203
 []\T1/ptm/m/n/10 Søgaard, A.  (2011).  Data point se-lec-tion for cross-
  []
 
-) [6
-
-] (./final.aux) ) 
+) [7] (./final.aux) ) 
 Here is how much of TeX's memory you used:
- 17210 strings out of 493054
- 375086 string characters out of 6134759
- 492955 words of memory out of 5000000
- 20347 multiletter control sequences out of 15000+600000
- 51040 words of font info for 51 fonts, out of 8000000 for 9000
+ 17266 strings out of 493054
+ 375502 string characters out of 6134759
+ 508088 words of memory out of 5000000
+ 20400 multiletter control sequences out of 15000+600000
+ 45367 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,104p,777b,1173s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.en
-c}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final.pdf (6 pages, 106069 bytes).
+ 62i,17n,103p,793b,1056s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on final.pdf (7 pages, 124781 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
