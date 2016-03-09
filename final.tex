@@ -42,7 +42,7 @@
   details the mapping of PoS tags, morphological features and
   dependency relations and provides a description of the structural
   changes made to NDT analyses in order to make it compliant with the
-  UD guidelines. We further present PoS-tagging and dependency parsing
+  UD guidelines. We further present PoS tagging and dependency parsing
   experiments which report first results for the processing of the
   converted treebank. The full converted treebank was made available
   with the 1.2 release of the UD treebanks.\\
@@ -57,7 +57,7 @@ With the increasing popularity of dependency-based representations of
 syntactic structure in recent years, a wealth of different dependency
 annotation schemes have surfaced. It has been shown that the choice of
 dependency scheme influences parsing results \cite{Sch:Abe:Rap:12} as
-well as down-stream applications \cite{Elm:Joh:Kle:13} and even though
+well as downstream applications \cite{Elm:Joh:Kle:13} and even though
 attempts have been made to contrast different schemes theoretically
 \cite{Iva:Oep:Ovr:12}, it is clear that the diversity of
 representation makes comparisons difficult. Cross-linguistically even
@@ -100,7 +100,7 @@ The Norwegian Dependency Treebank (NDT) \cite{Sol:Skj:Ovr:14} contains
 morphological and syntactic dependency annotation for both varieties
 of written Norwegian (Bokm{\aa}l and Nynorsk).\footnote{The current
   Norwegian UD treebank contains the data from the Bokmål section of
-  the treebank which consists of 311,000 tokens. There are plans to
+  the treebank, which consists of 311,000 tokens. There are plans to
   include the Nynorsk data in the next UD release.} The morphological
 annotation follows the Oslo-Bergen Tagger scheme
 \cite{Hag:Joh:Nok:00}.  The syntactic annotation scheme is, to a large
@@ -146,7 +146,7 @@ prepositions.
 The part-of-speech tag set used in the UD scheme is based on the
 Universal PoS tag set of \newcite{Pet:Das:McD:12} and contains 17 tags. The NDT tag set
 contains 19 tags.  The conversion of the part-of-speech information in
-NDT to the UD pos tag set is fairly straightforward and largely relies
+NDT to the UD PoS tag set is fairly straightforward and largely relies
 on a direct mapping presented in Table \ref{tb:pos}.  A few
 parts-of-speech require conversion rules which make reference to
 additional information in the treebank, represented by disjunction
@@ -186,7 +186,7 @@ nouns at the part-of-speech level. This information can be found among
 the morphological features in NDT ({\tt prop}), hence the mapping is
 straightforward.
 
-For verbs UD distinguishes auxiliaries ({\tt AUX}) from main
+For verbs, UD distinguishes auxiliaries ({\tt AUX}) from main
 verbs ({\tt VERB}).  This distinction is not explicitly made in
 NDT, hence our conversion procedure must make use of the syntactic
 structure of the verbs in order to implement this distinction. Verbs
@@ -200,17 +200,17 @@ the pronominal tag {\tt PRON} for these words.
 
 NDT explicitly marks headings using the {\tt |} symbol, tagged as a
 clause boundary ({\tt clb}) along with information in the
-morphological features {\tt <overskrift>}. These are converted to the
+morphological features ({\tt <overskrift>}). These are converted to the
 UD symbol tag {\tt SYM}.
 
 Numerical expressions, e.g. {\it to} 'two' or {\it 45} are tagged as
 determiners in NDT, also when they do not explicitly modify a nominal,
 e.g. {\it de to gjorde en imponerende innsats} 'the two did an
-impressive job'. These are however marked as 'kvant'
+impressive job'. These are however marked as {\tt kvant}
 (quantificational) in the morphological features, hence the conversion
 mapping makes reference to this property in order to distinguish {\tt NUM} from {\tt DET}.
 
-NDT implements a somehwat broader definition of prepositions than the UD
+NDT implements a somewhat broader definition of prepositions than the UD
 scheme and includes several cases which are counted as adverbs in the
 universal schemes. In particular, this is the case for demonstrative
 adverbs such as {\it her} 'here' and {\it der} 'there'. These are
@@ -402,7 +402,8 @@ In NDT, prepositions are heads of their prepositional complements
 which receive the {\tt PUTFYLL} label, see (\ref{ex:prep}a). Seeing
 that languages differ greatly in their use of pre/postpositions, the
 UD scheme annotates the prepositional complement as head and attaches
-the preposition using the {\tt case} relation, see (\ref{ex:prep}b). In conversion this is once again a matter of reversing the arc and reattaching dependents to the new head.
+the preposition using the {\tt case} relation, see (\ref{ex:prep}b). In the
+conversion, this is once again a matter of reversing the arc and reattaching dependents to the new head.
 %56
 \begin{examples}
 \item\label{ex:prep}
@@ -450,7 +451,7 @@ predicatives are attached as adverbial clauses ({\tt acl}) modifying the argumen
 they characterize, see (\ref{ex:pred}b). Our conversion thus attaches the {\tt FSPRED} argument to its sibling subject argument, {\tt FOPRED} to an object sibling.
 %65
 \begin{examples}
-\item\label{ex:pred} 
+\item\label{ex:pred}
 (a)\\
 %\begin{itemize}
 %\item[(a)]
@@ -499,7 +500,7 @@ mainly in the attachment of the conjunction and the relation names.
     \begin{dependency}
         \begin{deptext}[column sep=.2cm]
           kamskjell \& , \& piggvar \& og \& lammefilet \\
-          \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lambfilet}\\
+          \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lamb fillet}\\
         \end{deptext}
             \depedge{1}{2}{\sc ik}
             \depedge{1}{3}{\sc koord}
@@ -513,7 +514,7 @@ mainly in the attachment of the conjunction and the relation names.
     \begin{dependency}
         \begin{deptext}[column sep=.2cm]
           kamskjell \& , \& piggvar \& og \& lammefilet \\
-          \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lambfilet}\\
+          \w{scallops} \& , \& \w{turbot} \& \w{and} \& \w{lamb fillet}\\
         \end{deptext}
             \depedge{1}{2}{punct}
             \depedge{1}{3}{conj}
@@ -619,12 +620,12 @@ language-specific relation {\tt compound:prt}, for prepositions which
 are attached to a verb and furthermore does not have an explicit prepositional complement,
 e.g. {\it si opp} 'discontinue' (lit. 'say up').
 On manual inspection of the
-converted data we find that this conversion also gives us the
+converted data, we find that this conversion also gives us the
 preposition in fixed expressions which require the combination of a
 verb, direct object and a preposition, such as {\it snu ryggen til}
-'turn (ones) back to' as well as certain fixed combinations of
+'turn (one's) back to' as well as certain fixed combinations of
 prepositions which function as a whole syntactically, e.g. {\it til og
-  med} 'even (lit. to and with)'. Without any existing annotation
+  med} 'even (lit. to and with)'. Without any existing annotation,
 distinguishing these from the regular particle constructions these are
 difficult to differentiate automatically.
 
@@ -632,14 +633,14 @@ difficult to differentiate automatically.
 \paragraph{Relative clauses}The analyses of relative clauses differ notably between the two
 annotation schemes. Both schemes treat the relative clause as a
 clausal modifier of a nominal element ({\tt ATR} vs {\tt acl}),
-however the treatment of the relative marker/pronoun differs. NDT
+however, the treatment of the relative marker/pronoun differs. NDT
 treats relative markers as subordinating conjunctions which depend on
 the finite verb of the relative clause,\footnote{They argue for this
   by pointing to the fact that relative markers unlike many other
   languages do not conjugate (who-whom, der-die-das) and only occur
-  initially in a subordinate clause \cite{Faa:Lie:Van:97}} UD treats
+  initially in a subordinate clause \cite{Faa:Lie:Van:97}} while UD treats
 the relative marker as a pronoun which occupies an argument relation
-in the relative clause. In our conversion we introduce a
+in the relative clause. In our conversion, we introduce a
 language-specific variant of the clausal relation {\tt acl}, {\tt
   acl:relcl} which signals that this is a relative clause. The
 relative marker {\it som} 'that' receives an argument role based on a
@@ -692,10 +693,10 @@ Total & 20045 & 311277
 
 
 \section{Tagging and parsing into UD}
-Without a gold standard for Norwegian UD dependencies it is difficult
+Without a gold standard for Norwegian UD dependencies, it is difficult
 to evaluate our conversion directly. We may however, evaluate
 PoS-tagging and dependency parsing performance for the converted
-treebank.  In the following we report on a set of experiments which
+treebank.  In the following, we report on a set of experiments which
 investigate the performance of a state-of-the-art PoS-tagger and
 parser trained and evaluated on the converted Norwegian UD
 treebank. Even though the data sets are not strictly comparable, we
@@ -708,7 +709,7 @@ achieve a maximally realistic setting.
 For PoS-tagging, we experiment with two different tag sets: a coarse
 tag set, consisting of the simple PoS-tags in the two schemes (NDT and
 UD), and a fine-grained set, which represents the concatenation of
-PoS-tag and the morphological features. The original tag set of NDT
+the PoS-tag and the morphological features. The original tag set of NDT
 comprises 19 tags, 12 of which are morphosyntactic tags\footnote{The
   remaining tags describe various types of punctuation, such as
   commas, dashes, etc.}, while its fine-grained counterpart totals 368
@@ -723,7 +724,7 @@ data splits detailed in Table \ref{tb:splits}.
 
 The results for PoS-tagging are presented in Table
 \ref{tb:taggingeval}. The PoS-tagger obtains an accuracy of 96.96\% on
-the dev set and 96.82\% on the test set. For the fine-grained UD set
+the dev set and 96.82\% on the test set. For the fine-grained UD set,
 the performance drops to 94.59\% (dev) and 94.15\% (test).
 
 In general, we observe that tagging accuracy is higher on NDT with the
@@ -742,7 +743,7 @@ respectively.
 
 \ctable[botcap,
     caption={Overview of the results from tagging NDT and UD with the various
-        data sets and tag sets},
+        data sets and tag set.},
     label=tb:taggingeval,
 ]{llll}{}{
     \FL
@@ -776,7 +777,7 @@ parser\footnote{\url{code.google.com/archive/p/mate-tools}}
 experiments, with either gold or automatic tags (i.e., the
 coarse-grained tags as predicted by SVMTool as described above).  When
 using automatic tags, the morphological features are excluded from the
-data set, for the most realistic comparison. 
+data set, for the most realistic comparison.
 
 The parsing results are presented in Table \ref{tb:parsingeval}. We
 find that the UD-parser obtains a labeled accuracy score (LAS) of
@@ -786,7 +787,7 @@ corresponding results for the NDT-parser are 90.15\% (dev) and 90-55\%
 
 \ctable[botcap,
     caption={Overview of the results from parsing NDT and UD with the various
-        data sets and tag setups},
+        data sets and tag setups.},
     label=tb:parsingeval,
 ]{llllll}{}{
     \FL
@@ -819,10 +820,10 @@ In the experiments using automatically assigned tags (Auto), we
 combine the output of the taggers described in the previous section
 with the NDT and UD parsers. As expected, we observe a drop in parse
 results when we switch to automatically assigned PoS-tags. For the
-UD-parser, we observe a drop of 4.6 percentage point, whereas the
+UD-parser, we observe a drop of 4.6 percentage points, whereas the
 corresponding figure for the NDT-parser is 3.4 percentage points (on
 the dev sets). It is clear that the somewhat lower tagging accuracy
-for the UD treebank influences parsing results. 
+for the UD treebank influences parsing results.
 
 An error analysis in terms of dependency relation assignment and
 attachment, shows that the distinction of various clausal dependency
