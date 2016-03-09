@@ -5,12 +5,12 @@ The style file: lrec2016.bst
 Database file #1: lrec2016.bib
 You've used 28 entries,
             2667 wiz_defined-function locations,
-            739 strings with 10774 characters,
-and the built_in function-call counts, 12922 in all, are:
+            739 strings with 10783 characters,
+and the built_in function-call counts, 12924 in all, are:
 = -- 1299
 > -- 576
 < -- 12
-+ -- 202
++ -- 203
 - -- 199
 * -- 945
 := -- 2005
@@ -34,7 +34,7 @@ purify$ -- 239
 quote$ -- 0
 skip$ -- 436
 stack$ -- 0
-substring$ -- 506
+substring$ -- 507
 swap$ -- 174
 text.length$ -- 12
 text.prefix$ -- 0

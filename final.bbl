@@ -52,13 +52,14 @@ Gim{\'e}nez, J. and M{\`a}rquez, L.
 \bibitem[\protect\citename{Hagen \bgroup et al.\egroup }2000]{Hag:Joh:Nok:00}
 Hagen, K., Johannessen, J.~B., and N{\o}klestad, A.
 \newblock (2000).
-\newblock A constraint-based tagger for norwegian.
+\newblock A constraint-based tagger for {N}orwegian.
 \newblock In {\em 17th Scandinavian Conference in Linguistics}, pages 31--48.
 
 \bibitem[\protect\citename{Hohle}2016]{Hohle:16}
 Hohle, P.
 \newblock (2016).
-\newblock Th effect of tag set granularity on parsing performance in norwegian.
+\newblock The effect of tag set granularity on parsing performance in
+  {N}orwegian.
 \newblock Master's thesis, Dept. of Informatics, University of Oslo.
 
 \bibitem[\protect\citename{Ivanova \bgroup et al.\egroup }2012]{Iva:Oep:Ovr:12}
@@ -73,7 +74,7 @@ Ivanova, A., Oepen, S., {\O}vrelid, L., and Flickinger, D.
   }2015]{Joh:Alo:Pla:15}
 Johannsen, A., Alonso, H.~M., and Plank, B.
 \newblock (2015).
-\newblock Universal dependencies for danish.
+\newblock Universal dependencies for {D}anish.
 \newblock In {\em Proceedings of Treebanks and Linguistic Theories (TLT14)}.
 
 \bibitem[\protect\citename{Kaplan and Bresnan}1982]{Kap:Bre:82}
@@ -103,8 +104,8 @@ McDonald, R., Nivre, J., Quirmbach-Brundage, Y., Goldberg, Y., Das, D.,
 \bibitem[\protect\citename{Nivre \bgroup et al.\egroup }2006]{Niv:Nil:Hal:2006}
 Nivre, J., Nilsson, J., and Hall, J.
 \newblock (2006).
-\newblock Talbanken05: A swedish treebank with phrase structure and dependency
-  annotation.
+\newblock Talbanken05: A {S}wedish treebank with phrase structure and
+  dependency annotation.
 \newblock In {\em Proceedings of the Fifth International Conference on Language
   Resources and Evaluation ({LREC})}, Genoa, Italy.
 
